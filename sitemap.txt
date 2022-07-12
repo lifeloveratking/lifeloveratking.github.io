@@ -1,0 +1,8 @@
+http://example.com/link/index.html
+http://example.com/categories/index.html
+http://example.com/tags/index.html
+http://example.com/2022/07/12/demo/
+http://example.com/2022/07/11/hello-world/
+http://example.com/404.html
+http://example.com/about/index.html
+http://example.com/
