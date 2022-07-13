@@ -1,3 +1,4 @@
+http://example.com/2022/07/13/project/
 http://example.com/music/index-1.html
 http://example.com/music/index.html
 http://example.com/link/index.html
