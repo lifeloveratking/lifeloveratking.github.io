@@ -3,7 +3,7 @@
   <entry>
     <title>关于ajax的使用说明</title>
     <url>/2022/07/17/%E5%85%B3%E4%BA%8Eajax%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><p>今天看关于ajax技术，这种技术本身是不难的，但是由于技术粗糙，好久没练过了，导致项目不足够了解，出现了许多问题，也有了整理这个的必要<br>呜呜呜</p>
+    <content><![CDATA[<p>今天看关于ajax技术，这种技术本身是不难的，但是由于技术粗糙，好久没练过了，导致项目不足够了解，出现了许多问题，也有了整理这个的必要<br>呜呜呜</p>
 <blockquote>
 <p>AJAX &#x3D; Asynchronous JavaScript and XML（异步的 JavaScript 和 XML） AJAX 不是新的编程语言，而是一种使用现有标准的新方法。AJAX 最大的优点是在不重新加载整个页面的情况下，可以与服务器交换数据并更新部分网页内容。AJAX 不需要任何浏览器插件，但需要用户允许JavaScript在浏览器上执行。  </p>
 </blockquote>
@@ -80,7 +80,7 @@
   <entry>
     <title>爬虫入门学习</title>
     <url>/2022/07/22/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><p>真正的成长，应该是注重健康的</p>
+    <content><![CDATA[<p>真正的成长，应该是注重健康的</p>
 <p>爬虫一直以来，被人们以为是一项不尊重知识产权的技术，但是，就技术层面以来，他只是提供一种技术用来爬取结构化数据，这种数据可用于各种有用的应用程序，以及数据挖掘，信息处理或历史存档。因此，可以提供一种说法，就是技术无罪，我们可以通过此项技术提高生产力，产生更多有力的工具及资料，因此爬虫技术应该重新认识。  </p>
 <blockquote>
 <p>scrapy：是一个应用程序框架，用于对网站进行爬行和提取结构化数据，这些结构化数据可用于各种有用的应用程序，如数据挖掘、信息处理或历史存档。  </p>
@@ -141,7 +141,7 @@
   <entry>
     <title>爬虫常用库方法总结</title>
     <url>/2022/07/23/%E7%88%AC%E8%99%AB%E5%B8%B8%E7%94%A8%E5%BA%93%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><p>网页图片批量获取：</p>
+    <content><![CDATA[<p>网页图片批量获取：</p>
 <h2 id="图片下载："><a href="#图片下载：" class="headerlink" title="图片下载："></a>图片下载：</h2><p><em><strong>urllib库</strong></em>  </p>
 <blockquote>
 <p>urllib.request-打开和读取url<br>urllib.error-用来抛出异常<br>urllib.parse-解析url<br>urllib.robotpaser-解析robots.txt<br><img src="https://www.runoob.com/wp-content/uploads/2021/04/ulrib-py3.svg" alt="urllib">  </p>
