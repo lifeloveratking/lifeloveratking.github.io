@@ -201,6 +201,120 @@
       </tags>
   </entry>
   <entry>
+    <title>swagger</title>
+    <url>/2023/04/17/swagger/</url>
+    <content><![CDATA[<h1 id="swagger"><a href="#swagger" class="headerlink" title="swagger"></a>swagger</h1><p>学习目标</p>
+<ol>
+<li>了解swagger的作用和概念</li>
+<li>了解前后端分离</li>
+<li>在springboot集成swagger</li>
+</ol>
+<p>Swagger简介</p>
+<p><strong>前后端分离</strong></p>
+<p>Vue+spring boot</p>
+<p>后端时代：前端只用管理静态页面；html&#x3D;&#x3D;》后端。模版引擎：jsp&#x3D;&#x3D;》后端是主力</p>
+<p>前后端分离时代：</p>
+<ul>
+<li>后端：后端控制层：controller，service，dao【后端团队】</li>
+<li>前端： 前端控制层，视图层 【前端团队】<ul>
+<li>伪造后端数据，json</li>
+</ul>
+</li>
+<li>前后端如何交互？&#x3D;&#x3D;》api</li>
+<li>前后端相互独立</li>
+<li>前后端相对独立</li>
+<li>前后端可以布置到不同服务器</li>
+</ul>
+<p>产生一个问题</p>
+<ul>
+<li>前后端集成联调，前后端无法做到“几时联动，尽早解决”最终导致问题集中爆发；解决方案。</li>
+<li>首先指定schema【计划的提纲】，实时更新最新的api。降低继承的风险。</li>
+<li>早些年：指定word的计划文档</li>
+<li>前后端分离<ul>
+<li>前端测试后端测试：postman</li>
+<li>后端提供接口：需要实时更新及改动</li>
+</ul>
+</li>
+</ul>
+<p>Swagger</p>
+<ul>
+<li>号称世界上最流行的api框架</li>
+<li>restful api文档自动生成工具-api与api定义同时更新</li>
+<li>直接运行</li>
+</ul>
+<p>在项目中使用swagger需要springbox：</p>
+<ul>
+<li>swagger2</li>
+<li>ui</li>
+</ul>
+<h2 id="springboot集成swagger"><a href="#springboot集成swagger" class="headerlink" title="springboot集成swagger"></a>springboot集成swagger</h2><ol>
+<li><p>新建一个spring boot-web项目</p>
+</li>
+<li><p>导入依赖</p>
+<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger2</artifactId>
+    <version>2.9.1</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger-ui</artifactId>
+    <version>2.9.2</version>
+</dependency>
+</li>
+<li><p>编写一个hello工程</p>
+</li>
+<li><p>配置swagger</p>
+</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger-ui<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lin.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.CorsRegistry;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CorsConfig</span> <span class="keyword">extends</span> <span class="title class_">WebMvcConfigurationSupport</span> &#123;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * 这里主要为了解决跨域问题,所以重写addCorsMappings方法</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">addCorsMappings</span><span class="params">(CorsRegistry registry)</span> &#123;</span><br><span class="line">        registry.addMapping(<span class="string">&quot;/**&quot;</span>)</span><br><span class="line">                .allowedOrigins(<span class="string">&quot;*&quot;</span>)</span><br><span class="line">                .allowedMethods(<span class="string">&quot;GET&quot;</span>, <span class="string">&quot;HEAD&quot;</span>, <span class="string">&quot;POST&quot;</span>, <span class="string">&quot;PUT&quot;</span>, <span class="string">&quot;DELETE&quot;</span>, <span class="string">&quot;OPTIONS&quot;</span>)</span><br><span class="line">                .allowedHeaders(<span class="string">&quot;*&quot;</span>)</span><br><span class="line">                .exposedHeaders(<span class="string">&quot;access-control-allow-headers&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;access-control-allow-methods&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;access-control-allow-origin&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;access-control-max-age&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;X-Frame-Options&quot;</span>)</span><br><span class="line">                .allowCredentials(<span class="literal">false</span>).maxAge(<span class="number">3600</span>);</span><br><span class="line">        <span class="built_in">super</span>.addCorsMappings(registry);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//解决swagger映射</span></span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addResourceHandlers</span><span class="params">(ResourceHandlerRegistry registry)</span> &#123;</span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/**&quot;</span>).addResourceLocations(</span><br><span class="line">                <span class="string">&quot;classpath:/static/&quot;</span>);</span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/swagger-ui.html&quot;</span>).addResourceLocations(</span><br><span class="line">                <span class="string">&quot;classpath:/META-INF/resources/&quot;</span>);</span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/webjars/**&quot;</span>).addResourceLocations(</span><br><span class="line">                <span class="string">&quot;classpath:/META-INF/resources/webjars/&quot;</span>);</span><br><span class="line">        <span class="built_in">super</span>.addResourceHandlers(registry);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="http://localhost:8080/swagger-ui.html">http://localhost:8080/swagger-ui.html</a> 点击此页面出现这类error情况，是因为</p>
+<blockquote>
+<h2 id="swagger-ui-html-404问题解决"><a href="#swagger-ui-html-404问题解决" class="headerlink" title="swagger-ui.html 404问题解决"></a>swagger-ui.html 404问题解决</h2><p><a href="https://dev-tang.com/"> 唐际忠的博客 </a><em>2020-01-06 16:35:00</em></p>
+<p><a href="data:image/png;base64,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"> 手机阅读 </a><a href="https://dev-tang.com/wechat_zan.jpg"> 微信赞赏</a></p>
+<p>Spring boot整合swagger2（版本号：2.9.2）出现404错误。这个实在没啥说的直接上错误和解决方法。</p>
+<h4 id="错误提示"><a href="#错误提示" class="headerlink" title="错误提示"></a>错误提示</h4><p>页面出现这个错误：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Whitelabel Error Page</span><br><span class="line">This application has no explicit mapping for /error, so you are seeing this as a fallback.</span><br><span class="line"></span><br><span class="line">Mon Jan 06 16:38:25 CST 2020</span><br><span class="line">There was an unexpected error (type=Not Found, status=404).</span><br><span class="line">No message available </span><br></pre></td></tr></table></figure>
+
+<p>java控制台出现这样的日志：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">o.s.web.servlet.DispatcherServlet - GET &quot;/swagger-ui.html&quot;, parameters=&#123;&#125;</span><br><span class="line">o.s.web.servlet.PageNotFound - No mapping for GET /swagger-ui.html</span><br><span class="line">o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND</span><br><span class="line">o.s.web.servlet.DispatcherServlet - &quot;ERROR&quot; dispatch for GET &quot;/error&quot;, parameters=&#123;&#125;</span><br><span class="line">o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)</span><br><span class="line">o.s.web.servlet.DispatcherServlet - Exiting from &quot;ERROR&quot; dispatch, status 404</span><br></pre></td></tr></table></figure>
+
+<p>但是&#x2F;v2&#x2F;api-docs又是可以访问的。</p>
+<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>办法1、检查是否有地方加了这个注解<code>@EnableWebMvc</code>，有的话删掉就可以了。</p>
+<p>办法2、检查是否有类继承了<code>WebMvcConfigurationSupport</code>，有的话删掉就可以了。</p>
+<p>因为上面两个会覆盖spring mvc原本的配置，比如覆盖yml里面的配置。</p>
+<p>办法3、另外一种解决办法，就是继承<code>WebMvcConfigurationSupport</code>后，重写下面的方法，重新配置静态资源：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addResourceHandlers</span><span class="params">(ResourceHandlerRegistry registry)</span> &#123;</span><br><span class="line"> registry.addResourceHandler(<span class="string">&quot;/**&quot;</span>).addResourceLocations(</span><br><span class="line">         <span class="string">&quot;classpath:/static/&quot;</span>);</span><br><span class="line"> registry.addResourceHandler(<span class="string">&quot;swagger-ui.html&quot;</span>).addResourceLocations(</span><br><span class="line">         <span class="string">&quot;classpath:/META-INF/resources/&quot;</span>);</span><br><span class="line"> registry.addResourceHandler(<span class="string">&quot;/webjars/**&quot;</span>).addResourceLocations(</span><br><span class="line">         <span class="string">&quot;classpath:/META-INF/resources/webjars/&quot;</span>);</span><br><span class="line"> <span class="built_in">super</span>.addResourceHandlers(registry);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>按上面三种方法排查，404错误基本可以得到解决了。 重新启动服务器，你会发现那个绿黄绿黄的swagger页面又出现了。</p>
+<p>404错误github参考：<a href="https://github.com/springfox/springfox/issues/776">https://github.com/springfox/springfox/issues/776</a></p>
+<h4 id="补充（2020-05-13）"><a href="#补充（2020-05-13）" class="headerlink" title="补充（2020-05-13）"></a>补充（2020-05-13）</h4><p>笔者正在做的一个项目，引入了springfox-swagger2后，按照上面三个步骤检测了，swagger-ui.html页面依然404，后来排查发现，springfox-swagger-ui这个包没有被依赖引入。 在pom.xml里面加上这个swagger ui的jar包引用就可以了。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger-ui<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>Swagger配置接口</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//配置了swagger的bean实例</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> Docket <span class="title function_">docket</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Docket</span>(DocumentationType.SWAGGER_2)</span><br><span class="line">                .apiInfo(apiInfo())</span><br><span class="line">                .select()</span><br><span class="line">                <span class="comment">//RequestHandlerSelectors 指定要扫描的包</span></span><br><span class="line">                <span class="comment">//withMethodAnnotation:扫描方法上的注解</span></span><br><span class="line">                <span class="comment">// basePackage: 扫描指定的包</span></span><br><span class="line">                .apis(RequestHandlerSelectors.basePackage(<span class="string">&quot;com.lin.controller&quot;</span>))</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//只能搜索到localhost；8080：/lin下面的</span></span><br><span class="line">                .paths(PathSelectors.ant(<span class="string">&quot;/lin/**&quot;</span>))</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>我只希望我的swagger在生产环境中使用，在发布的时候不使用。</p>
+<ul>
+<li>判断是不是生产环境 flag&#x3D;false</li>
+<li>注入enable</li>
+</ul>
+<p>配置api分组</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.groupName(&quot;lin y&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>如何配置多个分组</p>
+]]></content>
+      <categories>
+        <category>spring</category>
+      </categories>
+  </entry>
+  <entry>
     <title>关于ajax的使用说明</title>
     <url>/2022/07/17/%E5%85%B3%E4%BA%8Eajax%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</url>
     <content><![CDATA[<p>今天看关于ajax技术，这种技术本身是不难的，但是由于技术粗糙，好久没练过了，导致项目不足够了解，出现了许多问题，也有了整理这个的必要<br>呜呜呜</p>
@@ -276,6 +390,67 @@
 <hr>
 <p><img src="/../img/12.png" alt="为admin"></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>爬虫入门学习</title>
+    <url>/2022/07/22/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>真正的成长，应该是注重健康的</p>
+<p>爬虫一直以来，被人们以为是一项不尊重知识产权的技术，但是，就技术层面以来，他只是提供一种技术用来爬取结构化数据，这种数据可用于各种有用的应用程序，以及数据挖掘，信息处理或历史存档。因此，可以提供一种说法，就是技术无罪，我们可以通过此项技术提高生产力，产生更多有力的工具及资料，因此爬虫技术应该重新认识。  </p>
+<blockquote>
+<p>scrapy：是一个应用程序框架，用于对网站进行爬行和提取结构化数据，这些结构化数据可用于各种有用的应用程序，如数据挖掘、信息处理或历史存档。  </p>
+</blockquote>
+<hr>
+<h1 id="爬虫"><a href="#爬虫" class="headerlink" title="爬虫"></a>爬虫</h1><h2 id="分析页面结构"><a href="#分析页面结构" class="headerlink" title="分析页面结构"></a>分析页面结构</h2><p><a href="http://quotes.toscrape.com/%EF%BC%8C%E6%98%AF%E4%B8%80%E4%B8%AA%E5%8F%AF%E4%BB%A5%E7%BB%83%E4%B9%A0%E7%88%AC%E8%99%AB%E7%9A%84%E7%BD%91%E7%AB%99">http://quotes.toscrape.com/，是一个可以练习爬虫的网站</a><br><img src="https://img-blog.csdnimg.cn/20200401164052584.png" alt="爬虫小项目"><br>这是一个极为简单的页面，每个页面有十个class为quote的小卡片里面包含text，auther，tag。<br>每个页面有个下一页的按钮。 </p>
+<p>url：<a href="http://quotes.toscrape.com/">http://quotes.toscrape.com/</a><br>由于结构过于繁琐，如果有点html结构基础，是可以判断整个页面的结构分布的，因此，直接开始。<br>每个quote是由三部分组成，文本，作者，标签。<br>具体的代码：    </p>
+<pre><code>  import scrapy
+
+      class QuotesSpider(scrapy.Spider):
+      name = &#39;quotes&#39;
+     start_urls = [
+       &#39;http://quotes.toscrape.com/tag/humor/&#39;,
+    ]
+
+    def parse(self, response):
+    for quote in response.css(&#39;div.quote&#39;):
+        yield &#123;
+            &#39;author&#39;: quote.xpath(&#39;span/small/text()&#39;).get(),
+            &#39;text&#39;: quote.css(&#39;span.text::text&#39;).get(),
+        &#125;
+
+    next_page = response.css(&#39;li.next a::attr(&quot;href&quot;)&#39;).get()
+    if next_page is not None:
+        yield response.follow(next_page, self.parse)
+</code></pre>
+<p>妈的 &gt;_&lt; 好难啊  </p>
+<h2 id="分析代码"><a href="#分析代码" class="headerlink" title="分析代码"></a>分析代码</h2><blockquote>
+<p>def parse(self, response):</p>
+</blockquote>
+<hr>
+<p>这个 parse() 方法通常解析response，将抓取的数据提取为dict，并查找新的URL以跟踪和创建新的请求  </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">parse</span>(<span class="params">self, response</span>):</span><br><span class="line">    <span class="keyword">for</span> quote <span class="keyword">in</span> response.css(<span class="string">&#x27;div.quote&#x27;</span>):</span><br><span class="line">        <span class="keyword">yield</span> &#123;</span><br><span class="line">            <span class="string">&#x27;author&#x27;</span>: quote.xpath(<span class="string">&#x27;span/small/text()&#x27;</span>).get(),</span><br><span class="line">            <span class="string">&#x27;text&#x27;</span>: quote.css(<span class="string">&#x27;span.text::text&#x27;</span>).get(),</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    next_page = response.css(<span class="string">&#x27;li.next a::attr(&quot;href&quot;)&#x27;</span>).get()</span><br><span class="line">    <span class="keyword">if</span> next_page <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">yield</span> response.follow(next_page, self.parse)</span><br><span class="line">```  </span><br><span class="line">使用CSS选择器循环 div.quote 元素，然后使用css选择器或者xpath生成一个包含 quote的作者、文本的列表  </span><br><span class="line">css选择器的使用无缝对接css中我们对选择器的认知</span><br><span class="line">xpath是官方推荐我们使用的</span><br><span class="line">查找到下一页的链接，并使用它继续调度 parse() 方法</span><br><span class="line"><span class="comment">## scrapy spider  </span></span><br><span class="line">&gt;scrapy startproject xxx</span><br><span class="line">---</span><br><span class="line">实现scrapy spider</span><br><span class="line"><span class="comment">### 第一步 创建一个新的scrapy项目  </span></span><br></pre></td></tr></table></figure>
+<p>scrapy startproject xxx</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">### 第二步 定义继承spider的类并定义初始请求  </span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">import scrapy</span><br><span class="line"></span><br><span class="line">class QuotesSpider(scrapy.Spider):</span><br><span class="line">    name = &quot;quotes&quot;</span><br><span class="line">    start_urls = [</span><br><span class="line">        &#x27;http://quotes.toscrape.com/page/1/&#x27;,</span><br><span class="line">        &#x27;http://quotes.toscrape.com/page/2/&#x27;,</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    def parse(self, response):</span><br><span class="line">        page = response.url.split(&quot;/&quot;)[-2] #根据上面的链接提取分页,如：/page/1/，提取到的就是：1</span><br><span class="line">        filename = &#x27;quotes-%s.html&#x27; % page #拼接文件名，如果是第一页，最终文件名便是：newpage-1.html</span><br><span class="line">        with open(filename, &#x27;wb&#x27;) as f:</span><br><span class="line">            f.write(response.body)</span><br><span class="line">        self.log(&#x27;Saved file %s&#x27; % filename)</span><br></pre></td></tr></table></figure>
+<p>还要定义属性和方法</p>
+<p>name ：标识Spider。它在一个项目中必须是唯一的，也就是说，不能为不同的Spider设置相同的名称。</p>
+<p>start_urls：具有URL列表的类属性</p>
+<p>parse() ：将被调用来处理这些URL的每个请求。parse() 是Scrapy的默认回调方法，对没有显式分配回调的请求调用该方法。</p>
+<p>parse() 方法通常解析响应，将抓取的数据提取为dict，并查找新的URL以跟踪和创建新的请求。  </p>
+<p><em><strong>scrapy crawl quotes</strong></em><br>妈的，学会了，不想写了<del>_</del>。  </p>
+<h3 id="scarpy-shell"><a href="#scarpy-shell" class="headerlink" title="scarpy shell"></a>scarpy shell</h3><p>终端输入：</p>
+<blockquote>
+<p>scrapy shell url  </p>
+</blockquote>
+<p>response.css()<br>response.css(‘xxx’) 返回的是一个类似列表的对象：SelectorList，<br>data中存储的是提取到的标签，<br>xpath中存储的XPath表达式，实际上CSS选择器是在后台转换为XPath表达式的<br>允许你进一步的细化选择和提取数据<br>response.css(‘xxx::text’) 与上面方法不同之处在于，data中存储的是提取到的标签的文本<br>response.css(‘xxx’).getall()、response.css(‘xxx::text’).getall()<br>getall() 方法，返回的是一个列表，<br>列表中的值是 SelectorList 中的 data 值<br>一般而言，选择器返回的结果不止一个，getall() 方法 提取全部内容  </p>
+<p>response.xpath这个不写了</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>quote = response.css(<span class="string">&quot;div.quote&quot;</span>)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>text = quote.css(<span class="string">&quot;span.text::text&quot;</span>).get()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>text</span><br><span class="line"><span class="string">&#x27;“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”&#x27;</span> </span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>author = quote.css(<span class="string">&quot;small.author::text&quot;</span>).get()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>author</span><br><span class="line"><span class="string">&#x27;Albert Einstein&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>tags = quote.css(<span class="string">&quot;div.tags a.tag::text&quot;</span>).getall()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>tags</span><br><span class="line">[<span class="string">&#x27;change&#x27;</span>, <span class="string">&#x27;deep-thoughts&#x27;</span>, <span class="string">&#x27;thinking&#x27;</span>, <span class="string">&#x27;world&#x27;</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="存取json文件"><a href="#存取json文件" class="headerlink" title="存取json文件"></a>存取json文件</h3><p>在项目顶层目录下输入scrapy crawl quotes -o quotes.json</p>
+<p>Scrapy 会生成quotes.json文件，并将爬取到的数据放到quotes.json文件中</p>
+<h3 id="具体栗子"><a href="#具体栗子" class="headerlink" title="具体栗子"></a>具体栗子</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">AuthorSpider</span>(scrapy.Spider):</span><br><span class="line">    name = <span class="string">&#x27;author&#x27;</span></span><br><span class="line"></span><br><span class="line">    start_urls = [<span class="string">&#x27;http://quotes.toscrape.com/&#x27;</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">parse</span>(<span class="params">self, response</span>):</span><br><span class="line">        author_page_links = response.css(<span class="string">&#x27;.author + a&#x27;</span>)</span><br><span class="line">        <span class="keyword">yield</span> <span class="keyword">from</span> response.follow_all(author_page_links, self.parse_author)</span><br><span class="line"></span><br><span class="line">        pagination_links = response.css(<span class="string">&#x27;li.next a&#x27;</span>)</span><br><span class="line">        <span class="keyword">yield</span> <span class="keyword">from</span> response.follow_all(pagination_links, self.parse)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">parse_author</span>(<span class="params">self, response</span>):</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">extract_with_css</span>(<span class="params">query</span>):</span><br><span class="line">            <span class="keyword">return</span> response.css(query).get(default=<span class="string">&#x27;&#x27;</span>).strip()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">yield</span> &#123;</span><br><span class="line">            <span class="string">&#x27;name&#x27;</span>: extract_with_css(<span class="string">&#x27;h3.author-title::text&#x27;</span>),</span><br><span class="line">            <span class="string">&#x27;birthdate&#x27;</span>: extract_with_css(<span class="string">&#x27;.author-born-date::text&#x27;</span>),</span><br><span class="line">            <span class="string">&#x27;birthlocation&#x27;</span>: extract_with_css(<span class="string">&#x27;.author-born-location::text&#x27;</span>),</span><br><span class="line">            <span class="string">&#x27;bio&#x27;</span>: extract_with_css(<span class="string">&#x27;.author-description::text&#x27;</span>),</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p>就写这么多吧。<br>本文参考CSDN博主索儿呀，索儿老师整理十分仔细，我写这个是为了记录学习爬虫的相关经历，如有冒犯，我会苏珊&gt;__&lt;<br><em><strong><a href="https://zhangguohao.blog.csdn.net/article/details/105245153">https://zhangguohao.blog.csdn.net/article/details/105245153</a></strong></em></p>
+]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
   </entry>
   <entry>
     <title>爬虫常用库方法总结</title>
@@ -356,67 +531,6 @@
 ]]></content>
       <tags>
         <tag>python_爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>爬虫入门学习</title>
-    <url>/2022/07/22/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>真正的成长，应该是注重健康的</p>
-<p>爬虫一直以来，被人们以为是一项不尊重知识产权的技术，但是，就技术层面以来，他只是提供一种技术用来爬取结构化数据，这种数据可用于各种有用的应用程序，以及数据挖掘，信息处理或历史存档。因此，可以提供一种说法，就是技术无罪，我们可以通过此项技术提高生产力，产生更多有力的工具及资料，因此爬虫技术应该重新认识。  </p>
-<blockquote>
-<p>scrapy：是一个应用程序框架，用于对网站进行爬行和提取结构化数据，这些结构化数据可用于各种有用的应用程序，如数据挖掘、信息处理或历史存档。  </p>
-</blockquote>
-<hr>
-<h1 id="爬虫"><a href="#爬虫" class="headerlink" title="爬虫"></a>爬虫</h1><h2 id="分析页面结构"><a href="#分析页面结构" class="headerlink" title="分析页面结构"></a>分析页面结构</h2><p><a href="http://quotes.toscrape.com/%EF%BC%8C%E6%98%AF%E4%B8%80%E4%B8%AA%E5%8F%AF%E4%BB%A5%E7%BB%83%E4%B9%A0%E7%88%AC%E8%99%AB%E7%9A%84%E7%BD%91%E7%AB%99">http://quotes.toscrape.com/，是一个可以练习爬虫的网站</a><br><img src="https://img-blog.csdnimg.cn/20200401164052584.png" alt="爬虫小项目"><br>这是一个极为简单的页面，每个页面有十个class为quote的小卡片里面包含text，auther，tag。<br>每个页面有个下一页的按钮。 </p>
-<p>url：<a href="http://quotes.toscrape.com/">http://quotes.toscrape.com/</a><br>由于结构过于繁琐，如果有点html结构基础，是可以判断整个页面的结构分布的，因此，直接开始。<br>每个quote是由三部分组成，文本，作者，标签。<br>具体的代码：    </p>
-<pre><code>  import scrapy
-
-      class QuotesSpider(scrapy.Spider):
-      name = &#39;quotes&#39;
-     start_urls = [
-       &#39;http://quotes.toscrape.com/tag/humor/&#39;,
-    ]
-
-    def parse(self, response):
-    for quote in response.css(&#39;div.quote&#39;):
-        yield &#123;
-            &#39;author&#39;: quote.xpath(&#39;span/small/text()&#39;).get(),
-            &#39;text&#39;: quote.css(&#39;span.text::text&#39;).get(),
-        &#125;
-
-    next_page = response.css(&#39;li.next a::attr(&quot;href&quot;)&#39;).get()
-    if next_page is not None:
-        yield response.follow(next_page, self.parse)
-</code></pre>
-<p>妈的 &gt;_&lt; 好难啊  </p>
-<h2 id="分析代码"><a href="#分析代码" class="headerlink" title="分析代码"></a>分析代码</h2><blockquote>
-<p>def parse(self, response):</p>
-</blockquote>
-<hr>
-<p>这个 parse() 方法通常解析response，将抓取的数据提取为dict，并查找新的URL以跟踪和创建新的请求  </p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">parse</span>(<span class="params">self, response</span>):</span><br><span class="line">    <span class="keyword">for</span> quote <span class="keyword">in</span> response.css(<span class="string">&#x27;div.quote&#x27;</span>):</span><br><span class="line">        <span class="keyword">yield</span> &#123;</span><br><span class="line">            <span class="string">&#x27;author&#x27;</span>: quote.xpath(<span class="string">&#x27;span/small/text()&#x27;</span>).get(),</span><br><span class="line">            <span class="string">&#x27;text&#x27;</span>: quote.css(<span class="string">&#x27;span.text::text&#x27;</span>).get(),</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    next_page = response.css(<span class="string">&#x27;li.next a::attr(&quot;href&quot;)&#x27;</span>).get()</span><br><span class="line">    <span class="keyword">if</span> next_page <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">yield</span> response.follow(next_page, self.parse)</span><br><span class="line">```  </span><br><span class="line">使用CSS选择器循环 div.quote 元素，然后使用css选择器或者xpath生成一个包含 quote的作者、文本的列表  </span><br><span class="line">css选择器的使用无缝对接css中我们对选择器的认知</span><br><span class="line">xpath是官方推荐我们使用的</span><br><span class="line">查找到下一页的链接，并使用它继续调度 parse() 方法</span><br><span class="line"><span class="comment">## scrapy spider  </span></span><br><span class="line">&gt;scrapy startproject xxx</span><br><span class="line">---</span><br><span class="line">实现scrapy spider</span><br><span class="line"><span class="comment">### 第一步 创建一个新的scrapy项目  </span></span><br></pre></td></tr></table></figure>
-<p>scrapy startproject xxx</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">### 第二步 定义继承spider的类并定义初始请求  </span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">import scrapy</span><br><span class="line"></span><br><span class="line">class QuotesSpider(scrapy.Spider):</span><br><span class="line">    name = &quot;quotes&quot;</span><br><span class="line">    start_urls = [</span><br><span class="line">        &#x27;http://quotes.toscrape.com/page/1/&#x27;,</span><br><span class="line">        &#x27;http://quotes.toscrape.com/page/2/&#x27;,</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    def parse(self, response):</span><br><span class="line">        page = response.url.split(&quot;/&quot;)[-2] #根据上面的链接提取分页,如：/page/1/，提取到的就是：1</span><br><span class="line">        filename = &#x27;quotes-%s.html&#x27; % page #拼接文件名，如果是第一页，最终文件名便是：newpage-1.html</span><br><span class="line">        with open(filename, &#x27;wb&#x27;) as f:</span><br><span class="line">            f.write(response.body)</span><br><span class="line">        self.log(&#x27;Saved file %s&#x27; % filename)</span><br></pre></td></tr></table></figure>
-<p>还要定义属性和方法</p>
-<p>name ：标识Spider。它在一个项目中必须是唯一的，也就是说，不能为不同的Spider设置相同的名称。</p>
-<p>start_urls：具有URL列表的类属性</p>
-<p>parse() ：将被调用来处理这些URL的每个请求。parse() 是Scrapy的默认回调方法，对没有显式分配回调的请求调用该方法。</p>
-<p>parse() 方法通常解析响应，将抓取的数据提取为dict，并查找新的URL以跟踪和创建新的请求。  </p>
-<p><em><strong>scrapy crawl quotes</strong></em><br>妈的，学会了，不想写了<del>_</del>。  </p>
-<h3 id="scarpy-shell"><a href="#scarpy-shell" class="headerlink" title="scarpy shell"></a>scarpy shell</h3><p>终端输入：</p>
-<blockquote>
-<p>scrapy shell url  </p>
-</blockquote>
-<p>response.css()<br>response.css(‘xxx’) 返回的是一个类似列表的对象：SelectorList，<br>data中存储的是提取到的标签，<br>xpath中存储的XPath表达式，实际上CSS选择器是在后台转换为XPath表达式的<br>允许你进一步的细化选择和提取数据<br>response.css(‘xxx::text’) 与上面方法不同之处在于，data中存储的是提取到的标签的文本<br>response.css(‘xxx’).getall()、response.css(‘xxx::text’).getall()<br>getall() 方法，返回的是一个列表，<br>列表中的值是 SelectorList 中的 data 值<br>一般而言，选择器返回的结果不止一个，getall() 方法 提取全部内容  </p>
-<p>response.xpath这个不写了</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>quote = response.css(<span class="string">&quot;div.quote&quot;</span>)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>text = quote.css(<span class="string">&quot;span.text::text&quot;</span>).get()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>text</span><br><span class="line"><span class="string">&#x27;“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”&#x27;</span> </span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>author = quote.css(<span class="string">&quot;small.author::text&quot;</span>).get()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>author</span><br><span class="line"><span class="string">&#x27;Albert Einstein&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>tags = quote.css(<span class="string">&quot;div.tags a.tag::text&quot;</span>).getall()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>tags</span><br><span class="line">[<span class="string">&#x27;change&#x27;</span>, <span class="string">&#x27;deep-thoughts&#x27;</span>, <span class="string">&#x27;thinking&#x27;</span>, <span class="string">&#x27;world&#x27;</span>]</span><br></pre></td></tr></table></figure>
-<h3 id="存取json文件"><a href="#存取json文件" class="headerlink" title="存取json文件"></a>存取json文件</h3><p>在项目顶层目录下输入scrapy crawl quotes -o quotes.json</p>
-<p>Scrapy 会生成quotes.json文件，并将爬取到的数据放到quotes.json文件中</p>
-<h3 id="具体栗子"><a href="#具体栗子" class="headerlink" title="具体栗子"></a>具体栗子</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">AuthorSpider</span>(scrapy.Spider):</span><br><span class="line">    name = <span class="string">&#x27;author&#x27;</span></span><br><span class="line"></span><br><span class="line">    start_urls = [<span class="string">&#x27;http://quotes.toscrape.com/&#x27;</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">parse</span>(<span class="params">self, response</span>):</span><br><span class="line">        author_page_links = response.css(<span class="string">&#x27;.author + a&#x27;</span>)</span><br><span class="line">        <span class="keyword">yield</span> <span class="keyword">from</span> response.follow_all(author_page_links, self.parse_author)</span><br><span class="line"></span><br><span class="line">        pagination_links = response.css(<span class="string">&#x27;li.next a&#x27;</span>)</span><br><span class="line">        <span class="keyword">yield</span> <span class="keyword">from</span> response.follow_all(pagination_links, self.parse)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">parse_author</span>(<span class="params">self, response</span>):</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">extract_with_css</span>(<span class="params">query</span>):</span><br><span class="line">            <span class="keyword">return</span> response.css(query).get(default=<span class="string">&#x27;&#x27;</span>).strip()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">yield</span> &#123;</span><br><span class="line">            <span class="string">&#x27;name&#x27;</span>: extract_with_css(<span class="string">&#x27;h3.author-title::text&#x27;</span>),</span><br><span class="line">            <span class="string">&#x27;birthdate&#x27;</span>: extract_with_css(<span class="string">&#x27;.author-born-date::text&#x27;</span>),</span><br><span class="line">            <span class="string">&#x27;birthlocation&#x27;</span>: extract_with_css(<span class="string">&#x27;.author-born-location::text&#x27;</span>),</span><br><span class="line">            <span class="string">&#x27;bio&#x27;</span>: extract_with_css(<span class="string">&#x27;.author-description::text&#x27;</span>),</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-<p>就写这么多吧。<br>本文参考CSDN博主索儿呀，索儿老师整理十分仔细，我写这个是为了记录学习爬虫的相关经历，如有冒犯，我会苏珊&gt;__&lt;<br><em><strong><a href="https://zhangguohao.blog.csdn.net/article/details/105245153">https://zhangguohao.blog.csdn.net/article/details/105245153</a></strong></em></p>
-]]></content>
-      <tags>
-        <tag>python</tag>
       </tags>
   </entry>
 </search>

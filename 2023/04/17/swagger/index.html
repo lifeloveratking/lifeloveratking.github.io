@@ -1,0 +1,345 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>swagger | 林</title><meta name="author" content="miiiss"><meta name="copyright" content="miiiss"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="swagger学习目标  了解swagger的作用和概念 了解前后端分离 在springboot集成swagger  Swagger简介 前后端分离 Vue+spring boot 后端时代：前端只用管理静态页面；html&#x3D;&#x3D;》后端。模版引擎：jsp&#x3D;&#x3D;》后端是主力 前后端分离时代：  后端：后端控制层：controller，service，dao【后端团队">
+<meta property="og:type" content="article">
+<meta property="og:title" content="swagger">
+<meta property="og:url" content="http://example.com/2023/04/17/swagger/index.html">
+<meta property="og:site_name" content="林">
+<meta property="og:description" content="swagger学习目标  了解swagger的作用和概念 了解前后端分离 在springboot集成swagger  Swagger简介 前后端分离 Vue+spring boot 后端时代：前端只用管理静态页面；html&#x3D;&#x3D;》后端。模版引擎：jsp&#x3D;&#x3D;》后端是主力 前后端分离时代：  后端：后端控制层：controller，service，dao【后端团队">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2023-04-17T03:07:21.000Z">
+<meta property="article:modified_time" content="2023-04-17T03:08:36.873Z">
+<meta property="article:author" content="miiiss">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/img/logo.png"><link rel="canonical" href="http://example.com/2023/04/17/swagger/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'swagger',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-04-17 11:08:36'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><link rel="stylesheet" href="APlayer.min.css"><div id="aplayer"></div><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" async></script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.css" /><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="林" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/zishen.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fa fa-film"></i><span> music</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">林</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fa fa-film"></i><span> music</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">swagger</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-04-17T03:07:21.000Z" title="发表于 2023-04-17 11:07:21">2023-04-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-04-17T03:08:36.873Z" title="更新于 2023-04-17 11:08:36">2023-04-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/spring/">spring</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="swagger"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="swagger"><a href="#swagger" class="headerlink" title="swagger"></a>swagger</h1><p>学习目标</p>
+<ol>
+<li>了解swagger的作用和概念</li>
+<li>了解前后端分离</li>
+<li>在springboot集成swagger</li>
+</ol>
+<p>Swagger简介</p>
+<p><strong>前后端分离</strong></p>
+<p>Vue+spring boot</p>
+<p>后端时代：前端只用管理静态页面；html&#x3D;&#x3D;》后端。模版引擎：jsp&#x3D;&#x3D;》后端是主力</p>
+<p>前后端分离时代：</p>
+<ul>
+<li>后端：后端控制层：controller，service，dao【后端团队】</li>
+<li>前端： 前端控制层，视图层 【前端团队】<ul>
+<li>伪造后端数据，json</li>
+</ul>
+</li>
+<li>前后端如何交互？&#x3D;&#x3D;》api</li>
+<li>前后端相互独立</li>
+<li>前后端相对独立</li>
+<li>前后端可以布置到不同服务器</li>
+</ul>
+<p>产生一个问题</p>
+<ul>
+<li>前后端集成联调，前后端无法做到“几时联动，尽早解决”最终导致问题集中爆发；解决方案。</li>
+<li>首先指定schema【计划的提纲】，实时更新最新的api。降低继承的风险。</li>
+<li>早些年：指定word的计划文档</li>
+<li>前后端分离<ul>
+<li>前端测试后端测试：postman</li>
+<li>后端提供接口：需要实时更新及改动</li>
+</ul>
+</li>
+</ul>
+<p>Swagger</p>
+<ul>
+<li>号称世界上最流行的api框架</li>
+<li>restful api文档自动生成工具-api与api定义同时更新</li>
+<li>直接运行</li>
+</ul>
+<p>在项目中使用swagger需要springbox：</p>
+<ul>
+<li>swagger2</li>
+<li>ui</li>
+</ul>
+<h2 id="springboot集成swagger"><a href="#springboot集成swagger" class="headerlink" title="springboot集成swagger"></a>springboot集成swagger</h2><ol>
+<li><p>新建一个spring boot-web项目</p>
+</li>
+<li><p>导入依赖</p>
+<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger2</artifactId>
+    <version>2.9.1</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger-ui</artifactId>
+    <version>2.9.2</version>
+</dependency>
+</li>
+<li><p>编写一个hello工程</p>
+</li>
+<li><p>配置swagger</p>
+</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger-ui<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lin.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.CorsRegistry;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CorsConfig</span> <span class="keyword">extends</span> <span class="title class_">WebMvcConfigurationSupport</span> &#123;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * 这里主要为了解决跨域问题,所以重写addCorsMappings方法</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">addCorsMappings</span><span class="params">(CorsRegistry registry)</span> &#123;</span><br><span class="line">        registry.addMapping(<span class="string">&quot;/**&quot;</span>)</span><br><span class="line">                .allowedOrigins(<span class="string">&quot;*&quot;</span>)</span><br><span class="line">                .allowedMethods(<span class="string">&quot;GET&quot;</span>, <span class="string">&quot;HEAD&quot;</span>, <span class="string">&quot;POST&quot;</span>, <span class="string">&quot;PUT&quot;</span>, <span class="string">&quot;DELETE&quot;</span>, <span class="string">&quot;OPTIONS&quot;</span>)</span><br><span class="line">                .allowedHeaders(<span class="string">&quot;*&quot;</span>)</span><br><span class="line">                .exposedHeaders(<span class="string">&quot;access-control-allow-headers&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;access-control-allow-methods&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;access-control-allow-origin&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;access-control-max-age&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;X-Frame-Options&quot;</span>)</span><br><span class="line">                .allowCredentials(<span class="literal">false</span>).maxAge(<span class="number">3600</span>);</span><br><span class="line">        <span class="built_in">super</span>.addCorsMappings(registry);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//解决swagger映射</span></span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addResourceHandlers</span><span class="params">(ResourceHandlerRegistry registry)</span> &#123;</span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/**&quot;</span>).addResourceLocations(</span><br><span class="line">                <span class="string">&quot;classpath:/static/&quot;</span>);</span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/swagger-ui.html&quot;</span>).addResourceLocations(</span><br><span class="line">                <span class="string">&quot;classpath:/META-INF/resources/&quot;</span>);</span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/webjars/**&quot;</span>).addResourceLocations(</span><br><span class="line">                <span class="string">&quot;classpath:/META-INF/resources/webjars/&quot;</span>);</span><br><span class="line">        <span class="built_in">super</span>.addResourceHandlers(registry);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="http://localhost:8080/swagger-ui.html">http://localhost:8080/swagger-ui.html</a> 点击此页面出现这类error情况，是因为</p>
+<blockquote>
+<h2 id="swagger-ui-html-404问题解决"><a href="#swagger-ui-html-404问题解决" class="headerlink" title="swagger-ui.html 404问题解决"></a>swagger-ui.html 404问题解决</h2><p><a target="_blank" rel="noopener" href="https://dev-tang.com/"> 唐际忠的博客 </a><em>2020-01-06 16:35:00</em></p>
+<p><a href="data:image/png;base64,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"> 手机阅读 </a><a target="_blank" rel="noopener" href="https://dev-tang.com/wechat_zan.jpg"> 微信赞赏</a></p>
+<p>Spring boot整合swagger2（版本号：2.9.2）出现404错误。这个实在没啥说的直接上错误和解决方法。</p>
+<h4 id="错误提示"><a href="#错误提示" class="headerlink" title="错误提示"></a>错误提示</h4><p>页面出现这个错误：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Whitelabel Error Page</span><br><span class="line">This application has no explicit mapping for /error, so you are seeing this as a fallback.</span><br><span class="line"></span><br><span class="line">Mon Jan 06 16:38:25 CST 2020</span><br><span class="line">There was an unexpected error (type=Not Found, status=404).</span><br><span class="line">No message available </span><br></pre></td></tr></table></figure>
+
+<p>java控制台出现这样的日志：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">o.s.web.servlet.DispatcherServlet - GET &quot;/swagger-ui.html&quot;, parameters=&#123;&#125;</span><br><span class="line">o.s.web.servlet.PageNotFound - No mapping for GET /swagger-ui.html</span><br><span class="line">o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND</span><br><span class="line">o.s.web.servlet.DispatcherServlet - &quot;ERROR&quot; dispatch for GET &quot;/error&quot;, parameters=&#123;&#125;</span><br><span class="line">o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)</span><br><span class="line">o.s.web.servlet.DispatcherServlet - Exiting from &quot;ERROR&quot; dispatch, status 404</span><br></pre></td></tr></table></figure>
+
+<p>但是&#x2F;v2&#x2F;api-docs又是可以访问的。</p>
+<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>办法1、检查是否有地方加了这个注解<code>@EnableWebMvc</code>，有的话删掉就可以了。</p>
+<p>办法2、检查是否有类继承了<code>WebMvcConfigurationSupport</code>，有的话删掉就可以了。</p>
+<p>因为上面两个会覆盖spring mvc原本的配置，比如覆盖yml里面的配置。</p>
+<p>办法3、另外一种解决办法，就是继承<code>WebMvcConfigurationSupport</code>后，重写下面的方法，重新配置静态资源：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addResourceHandlers</span><span class="params">(ResourceHandlerRegistry registry)</span> &#123;</span><br><span class="line"> registry.addResourceHandler(<span class="string">&quot;/**&quot;</span>).addResourceLocations(</span><br><span class="line">         <span class="string">&quot;classpath:/static/&quot;</span>);</span><br><span class="line"> registry.addResourceHandler(<span class="string">&quot;swagger-ui.html&quot;</span>).addResourceLocations(</span><br><span class="line">         <span class="string">&quot;classpath:/META-INF/resources/&quot;</span>);</span><br><span class="line"> registry.addResourceHandler(<span class="string">&quot;/webjars/**&quot;</span>).addResourceLocations(</span><br><span class="line">         <span class="string">&quot;classpath:/META-INF/resources/webjars/&quot;</span>);</span><br><span class="line"> <span class="built_in">super</span>.addResourceHandlers(registry);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>按上面三种方法排查，404错误基本可以得到解决了。 重新启动服务器，你会发现那个绿黄绿黄的swagger页面又出现了。</p>
+<p>404错误github参考：<a target="_blank" rel="noopener" href="https://github.com/springfox/springfox/issues/776">https://github.com/springfox/springfox/issues/776</a></p>
+<h4 id="补充（2020-05-13）"><a href="#补充（2020-05-13）" class="headerlink" title="补充（2020-05-13）"></a>补充（2020-05-13）</h4><p>笔者正在做的一个项目，引入了springfox-swagger2后，按照上面三个步骤检测了，swagger-ui.html页面依然404，后来排查发现，springfox-swagger-ui这个包没有被依赖引入。 在pom.xml里面加上这个swagger ui的jar包引用就可以了。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger-ui<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>Swagger配置接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//配置了swagger的bean实例</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> Docket <span class="title function_">docket</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Docket</span>(DocumentationType.SWAGGER_2)</span><br><span class="line">                .apiInfo(apiInfo())</span><br><span class="line">                .select()</span><br><span class="line">                <span class="comment">//RequestHandlerSelectors 指定要扫描的包</span></span><br><span class="line">                <span class="comment">//withMethodAnnotation:扫描方法上的注解</span></span><br><span class="line">                <span class="comment">// basePackage: 扫描指定的包</span></span><br><span class="line">                .apis(RequestHandlerSelectors.basePackage(<span class="string">&quot;com.lin.controller&quot;</span>))</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//只能搜索到localhost；8080：/lin下面的</span></span><br><span class="line">                .paths(PathSelectors.ant(<span class="string">&quot;/lin/**&quot;</span>))</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>我只希望我的swagger在生产环境中使用，在发布的时候不使用。</p>
+<ul>
+<li>判断是不是生产环境 flag&#x3D;false</li>
+<li>注入enable</li>
+</ul>
+<p>配置api分组</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.groupName(&quot;lin y&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>如何配置多个分组</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">miiiss</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/04/17/swagger/">http://example.com/2023/04/17/swagger/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">林</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/04/16/spring1/"><img class="next-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">spring技术详解</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/zishen.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">miiiss</div><div class="author-info__description">时间过得真快</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/lifeloveratking"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=535668586" target="_blank" title=""><i class="fa fa-qq"></i></a><a class="social-icon" href="mailto:sviptzk@163.com" target="_blank" title=""><i class="fa fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title=""><i class="fa fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">加油</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#swagger"><span class="toc-number">1.</span> <span class="toc-text">swagger</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#springboot%E9%9B%86%E6%88%90swagger"><span class="toc-number">1.1.</span> <span class="toc-text">springboot集成swagger</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#swagger-ui-html-404%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3"><span class="toc-number">1.2.</span> <span class="toc-text">swagger-ui.html 404问题解决</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E6%8F%90%E7%A4%BA"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">错误提示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">解决办法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%EF%BC%882020-05-13%EF%BC%89"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">补充（2020-05-13）</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/04/17/swagger/" title="swagger"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="swagger"/></a><div class="content"><a class="title" href="/2023/04/17/swagger/" title="swagger">swagger</a><time datetime="2023-04-17T03:07:21.000Z" title="发表于 2023-04-17 11:07:21">2023-04-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/16/spring1/" title="spring技术详解"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="spring技术详解"/></a><div class="content"><a class="title" href="/2023/04/16/spring1/" title="spring技术详解">spring技术详解</a><time datetime="2023-04-16T04:39:15.000Z" title="发表于 2023-04-16 12:39:15">2023-04-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/16/shrio/" title="shiro"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="shiro"/></a><div class="content"><a class="title" href="/2023/04/16/shrio/" title="shiro">shiro</a><time datetime="2023-04-16T04:39:10.000Z" title="发表于 2023-04-16 12:39:10">2023-04-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/23/%E7%88%AC%E8%99%AB%E5%B8%B8%E7%94%A8%E5%BA%93%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" title="爬虫常用库方法总结"><img src="/img/1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="爬虫常用库方法总结"/></a><div class="content"><a class="title" href="/2022/07/23/%E7%88%AC%E8%99%AB%E5%B8%B8%E7%94%A8%E5%BA%93%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" title="爬虫常用库方法总结">爬虫常用库方法总结</a><time datetime="2022-07-23T10:48:13.000Z" title="发表于 2022-07-23 18:48:13">2022-07-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/22/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" title="爬虫入门学习"><img src="/img/2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="爬虫入门学习"/></a><div class="content"><a class="title" href="/2022/07/22/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" title="爬虫入门学习">爬虫入门学习</a><time datetime="2022-07-22T11:46:46.000Z" title="发表于 2022-07-22 19:46:46">2022-07-22</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By miiiss</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'OGkefNBy0zdWpqhQTYaG3J8G-MdYXbMMI',
+      appKey: '6FIuNL3jC3PJBj7b3jMNGFQq',
+      avatar: 'mm',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="5183531430" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="false" muted></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="true" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script async data-pjax src="/"></script></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover1.webp);"> <a class="categoryBar-list-link" href="categories/spring/">spring</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr">Ubuntu指南</span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_clock_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_injector_config();
+  }
+  </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>

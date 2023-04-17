@@ -1,3 +1,4 @@
+http://example.com/2023/04/17/swagger/
 http://example.com/2023/04/16/shrio/
 http://example.com/2023/04/16/spring1/
 http://example.com/categories/index-1.html
@@ -20,6 +21,6 @@ http://example.com/
 http://example.com/tags/spring/
 http://example.com/tags/IOC%E5%92%8CDI/
 http://example.com/tags/%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/
-http://example.com/tags/python-%E7%88%AC%E8%99%AB/
 http://example.com/tags/python/
+http://example.com/tags/python-%E7%88%AC%E8%99%AB/
 http://example.com/categories/spring/
