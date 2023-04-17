@@ -1,3 +1,8 @@
+http://example.com/2023/04/17/vue_1.5/
+http://example.com/2023/04/17/vue_2/
+http://example.com/2023/04/17/vue_4/
+http://example.com/2023/04/17/vue_3/
+http://example.com/2023/04/17/vue-1/
 http://example.com/2023/04/17/swagger/
 http://example.com/2023/04/06/springSecurity(%E5%AE%89%E5%85%A8)/
 http://example.com/2023/04/16/spring1/
@@ -23,10 +28,15 @@ http://example.com/categories/index.html
 http://example.com/404.html
 http://example.com/about/index.html
 http://example.com/
+http://example.com/tags/vue/
+http://example.com/tags/vuex/
+http://example.com/tags/vue-router/
+http://example.com/tags/vue-aixos/
 http://example.com/tags/spring/
 http://example.com/tags/IOC%E5%92%8CDI/
 http://example.com/tags/%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/
-http://example.com/categories/spring-boot/
 http://example.com/categories/git/
 http://example.com/categories/spring/
+http://example.com/categories/spring-boot/
+http://example.com/categories/vue/
 http://example.com/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/
