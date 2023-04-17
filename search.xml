@@ -201,83 +201,6 @@
       </tags>
   </entry>
   <entry>
-    <title>关于ajax的使用说明</title>
-    <url>/2022/07/17/%E5%85%B3%E4%BA%8Eajax%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</url>
-    <content><![CDATA[<p>今天看关于ajax技术，这种技术本身是不难的，但是由于技术粗糙，好久没练过了，导致项目不足够了解，出现了许多问题，也有了整理这个的必要<br>呜呜呜</p>
-<blockquote>
-<p>AJAX &#x3D; Asynchronous JavaScript and XML（异步的 JavaScript 和 XML） AJAX 不是新的编程语言，而是一种使用现有标准的新方法。AJAX 最大的优点是在不重新加载整个页面的情况下，可以与服务器交换数据并更新部分网页内容。AJAX 不需要任何浏览器插件，但需要用户允许JavaScript在浏览器上执行。  </p>
-</blockquote>
-<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><hr>
-<p>接着，开始编写具体的功能。  </p>
-<p>**接着，最操蛋的事情来了，maven的pom.xml一直配置不好，速度奇慢，因此，搜索到了一种方法那就是！利用阿里云的镜像地址，速度飞起！</p>
-<h2 id="打开-x2F-创建-settings-xml"><a href="#打开-x2F-创建-settings-xml" class="headerlink" title="打开&#x2F;创建 settings.xml"></a>打开&#x2F;创建 settings.xml</h2><p><img src="/../img/10.png" alt="这是图片"></p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;settings xmlns=&quot;http://maven.apache.org/SETTINGS/1.0.0&quot;
-      xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-      xsi:schemaLocation=&quot;http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd&quot;&gt;
-&lt;mirrors&gt;
-    &lt;mirror&gt;
-        &lt;id&gt;alimaven&lt;/id&gt;
-        &lt;name&gt;aliyun maven&lt;/name&gt;
-        &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;
-        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
-    &lt;/mirror&gt;
-
-    &lt;mirror&gt;
-        &lt;id&gt;uk&lt;/id&gt;
-        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
-        &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
-        &lt;url&gt;http://uk.maven.org/maven2/&lt;/url&gt;
-    &lt;/mirror&gt;
-
-    &lt;mirror&gt;
-        &lt;id&gt;CN&lt;/id&gt;
-        &lt;name&gt;OSChina Central&lt;/name&gt;
-        &lt;url&gt;http://maven.oschina.net/content/groups/public/&lt;/url&gt;
-        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
-    &lt;/mirror&gt;
-
-    &lt;mirror&gt;
-        &lt;id&gt;nexus&lt;/id&gt;
-        &lt;name&gt;internal nexus repository&lt;/name&gt;
-        &lt;url&gt;http://repo.maven.apache.org/maven2&lt;/url&gt;
-        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
-    &lt;/mirror&gt;
-&lt;/mirrors&gt;
-</code></pre>
-</settings>  
-如此，便可以加快相关的部署及下载速度，同时，使用相关的jquery，我使用的是网址，并没有进行相关的maven配置。    
-
-<pre><code>&lt;script src=&quot;https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js&quot;&gt;&lt;/script&gt; 
-</code></pre>
-<h2 id="实现："><a href="#实现：" class="headerlink" title="实现："></a>实现：</h2><p>具体的设想是设计一个输入框失去焦点的事件，即onblur()事件，对于页面进行局部刷新，实现相关的ajax作用  </p>
-<blockquote>
-<p>用户名<br>    <input type="text" id="txtname" onblur="an()">  </p>
-</blockquote>
-<pre><code>function an()&#123;
-    //请求将文本框输入的值发给服务器，
-    // 接受服务器的值
-    $.ajax(&#123;
-        url:&quot;$&#123;pageContext.request.contextPath&#125;/ajax/a1&quot;,
-        data:&#123;&quot;name&quot;:$(&quot;#txtname&quot;).val()&#125;,
-        success:function (data,status)&#123;
-            console.log(data)
-            alert(status)
-        &#125;
-    &#125;);
-
-&#125;
-</code></pre>
-<p>然后实现当输入框内容为admin时，控制台显示为true，当输入框为其他数时，则为false。</p>
-<p><img src="/../img/11.png" alt="不为admin时"></p>
-<blockquote>
-<p>Failed to load resource: the server responded with a status of 404 ()此类报错为正常错误，无须担心</p>
-</blockquote>
-<hr>
-<p><img src="/../img/12.png" alt="为admin"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>swagger</title>
     <url>/2023/04/17/swagger/</url>
     <content><![CDATA[<h1 id="swagger"><a href="#swagger" class="headerlink" title="swagger"></a>swagger</h1><p>学习目标</p>
@@ -532,5 +455,82 @@
       <tags>
         <tag>python_爬虫</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>关于ajax的使用说明</title>
+    <url>/2022/07/17/%E5%85%B3%E4%BA%8Eajax%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[<p>今天看关于ajax技术，这种技术本身是不难的，但是由于技术粗糙，好久没练过了，导致项目不足够了解，出现了许多问题，也有了整理这个的必要<br>呜呜呜</p>
+<blockquote>
+<p>AJAX &#x3D; Asynchronous JavaScript and XML（异步的 JavaScript 和 XML） AJAX 不是新的编程语言，而是一种使用现有标准的新方法。AJAX 最大的优点是在不重新加载整个页面的情况下，可以与服务器交换数据并更新部分网页内容。AJAX 不需要任何浏览器插件，但需要用户允许JavaScript在浏览器上执行。  </p>
+</blockquote>
+<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><hr>
+<p>接着，开始编写具体的功能。  </p>
+<p>**接着，最操蛋的事情来了，maven的pom.xml一直配置不好，速度奇慢，因此，搜索到了一种方法那就是！利用阿里云的镜像地址，速度飞起！</p>
+<h2 id="打开-x2F-创建-settings-xml"><a href="#打开-x2F-创建-settings-xml" class="headerlink" title="打开&#x2F;创建 settings.xml"></a>打开&#x2F;创建 settings.xml</h2><p><img src="/../img/10.png" alt="这是图片"></p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;settings xmlns=&quot;http://maven.apache.org/SETTINGS/1.0.0&quot;
+      xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+      xsi:schemaLocation=&quot;http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd&quot;&gt;
+&lt;mirrors&gt;
+    &lt;mirror&gt;
+        &lt;id&gt;alimaven&lt;/id&gt;
+        &lt;name&gt;aliyun maven&lt;/name&gt;
+        &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;
+        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+    &lt;/mirror&gt;
+
+    &lt;mirror&gt;
+        &lt;id&gt;uk&lt;/id&gt;
+        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+        &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+        &lt;url&gt;http://uk.maven.org/maven2/&lt;/url&gt;
+    &lt;/mirror&gt;
+
+    &lt;mirror&gt;
+        &lt;id&gt;CN&lt;/id&gt;
+        &lt;name&gt;OSChina Central&lt;/name&gt;
+        &lt;url&gt;http://maven.oschina.net/content/groups/public/&lt;/url&gt;
+        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+    &lt;/mirror&gt;
+
+    &lt;mirror&gt;
+        &lt;id&gt;nexus&lt;/id&gt;
+        &lt;name&gt;internal nexus repository&lt;/name&gt;
+        &lt;url&gt;http://repo.maven.apache.org/maven2&lt;/url&gt;
+        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+    &lt;/mirror&gt;
+&lt;/mirrors&gt;
+</code></pre>
+</settings>  
+如此，便可以加快相关的部署及下载速度，同时，使用相关的jquery，我使用的是网址，并没有进行相关的maven配置。    
+
+<pre><code>&lt;script src=&quot;https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js&quot;&gt;&lt;/script&gt; 
+</code></pre>
+<h2 id="实现："><a href="#实现：" class="headerlink" title="实现："></a>实现：</h2><p>具体的设想是设计一个输入框失去焦点的事件，即onblur()事件，对于页面进行局部刷新，实现相关的ajax作用  </p>
+<blockquote>
+<p>用户名<br>    <input type="text" id="txtname" onblur="an()">  </p>
+</blockquote>
+<pre><code>function an()&#123;
+    //请求将文本框输入的值发给服务器，
+    // 接受服务器的值
+    $.ajax(&#123;
+        url:&quot;$&#123;pageContext.request.contextPath&#125;/ajax/a1&quot;,
+        data:&#123;&quot;name&quot;:$(&quot;#txtname&quot;).val()&#125;,
+        success:function (data,status)&#123;
+            console.log(data)
+            alert(status)
+        &#125;
+    &#125;);
+
+&#125;
+</code></pre>
+<p>然后实现当输入框内容为admin时，控制台显示为true，当输入框为其他数时，则为false。</p>
+<p><img src="/../img/11.png" alt="不为admin时"></p>
+<blockquote>
+<p>Failed to load resource: the server responded with a status of 404 ()此类报错为正常错误，无须担心</p>
+</blockquote>
+<hr>
+<p><img src="/../img/12.png" alt="为admin"></p>
+]]></content>
   </entry>
 </search>
