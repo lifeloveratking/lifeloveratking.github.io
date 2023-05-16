@@ -1,0 +1,495 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Linux | 林</title><meta name="keywords" content="linux"><meta name="author" content="miiiss"><meta name="copyright" content="miiiss"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Linux1.什么是Linux？是一套免费使用和自由传播的类UNIX操作系统，其内核由林纳斯·本纳第克特·托瓦兹于1991年第一次释出，它主要受到Minix和Unix思想的启发，是一个基于POSIX和Unix的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的Unix工具软件、应用程序和网络协议。它支持32位和64位硬件。 2.Linux内核主要负责哪些功能 系统内存管理 软件程序管理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux">
+<meta property="og:url" content="http://example.com/2023/04/19/Linux-1/index.html">
+<meta property="og:site_name" content="林">
+<meta property="og:description" content="Linux1.什么是Linux？是一套免费使用和自由传播的类UNIX操作系统，其内核由林纳斯·本纳第克特·托瓦兹于1991年第一次释出，它主要受到Minix和Unix思想的启发，是一个基于POSIX和Unix的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的Unix工具软件、应用程序和网络协议。它支持32位和64位硬件。 2.Linux内核主要负责哪些功能 系统内存管理 软件程序管理">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.pixabay.com/photo/2023/04/09/05/22/flowers-7910753__340.png">
+<meta property="article:published_time" content="2023-04-19T04:36:56.000Z">
+<meta property="article:modified_time" content="2023-04-19T04:40:10.096Z">
+<meta property="article:author" content="miiiss">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.pixabay.com/photo/2023/04/09/05/22/flowers-7910753__340.png"><link rel="shortcut icon" href="/img/logo.png"><link rel="canonical" href="http://example.com/2023/04/19/Linux-1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Linux',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-04-19 12:40:10'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><link rel="stylesheet" href="APlayer.min.css"><div id="aplayer"></div><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" async></script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="林" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/pexels-anh-dang-16372799.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fa fa-film"></i><span> music</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.pixabay.com/photo/2023/04/09/05/22/flowers-7910753__340.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">林</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fa fa-film"></i><span> music</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Linux</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-04-19T04:36:56.000Z" title="发表于 2023-04-19 12:36:56">2023-04-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-04-19T04:40:10.096Z" title="更新于 2023-04-19 12:40:10">2023-04-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux/">Linux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>16分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Linux"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h4 id="1-什么是Linux？"><a href="#1-什么是Linux？" class="headerlink" title="1.什么是Linux？"></a>1.什么是Linux？</h4><p>是一套免费使用和自由传播的类UNIX操作系统，其内核由林纳斯·本纳第克特·托瓦兹于1991年第一次释出，它主要受到Minix和Unix思想的启发，是一个基于POSIX和Unix的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的Unix工具软件、应用程序和网络协议。它支持32位和64位硬件。</p>
+<h4 id="2-Linux内核主要负责哪些功能"><a href="#2-Linux内核主要负责哪些功能" class="headerlink" title="2.Linux内核主要负责哪些功能"></a>2.Linux内核主要负责哪些功能</h4><ul>
+<li>系统内存管理</li>
+<li>软件程序管理</li>
+<li>硬件设备管理</li>
+<li>文件系统管理</li>
+</ul>
+<h4 id="3-交互方式"><a href="#3-交互方式" class="headerlink" title="3.交互方式"></a>3.交互方式</h4><p>控制台终端、图形化终端</p>
+<h4 id="4-启动shell"><a href="#4-启动shell" class="headerlink" title="4.启动shell"></a>4.启动shell</h4><p>GNU bash shell能提供对linux 系统的交互式访问。作为普通程序运行，通常在用户登陆终端时启动。登录时系统启动的shell依赖与用户账户的配置。</p>
+<h4 id="5-bash手册"><a href="#5-bash手册" class="headerlink" title="5.bash手册"></a>5.bash手册</h4><p>大多数linux发行版自带以查找shell命令及其他GNU工具信息的在线手册。man命令用来访问linux系统上的手册页面。当用man命令查看手册，使用分页的程序来现实的。</p>
+<h4 id="6-登陆后你在的位置？"><a href="#6-登陆后你在的位置？" class="headerlink" title="6.登陆后你在的位置？"></a>6.登陆后你在的位置？</h4><p>一般登陆后，你的位置位于自己的主目录中。</p>
+<h4 id="7-绝对文件路径-相对文件路径？快捷方式？"><a href="#7-绝对文件路径-相对文件路径？快捷方式？" class="headerlink" title="7.绝对文件路径?相对文件路径？快捷方式？"></a>7.绝对文件路径?相对文件路径？快捷方式？</h4><p>绝对文件路径：描述了在虚拟目录结构中该目录的确切位置，以虚拟目录跟目录开始，相当于目录全名。</p>
+<p>以正斜线(&#x2F;)开始，比如 &#x2F;usr&#x2F;local。</p>
+<p>相对文件路径：允许用户执行一个基于当前位置的目标文件路径。</p>
+<p>比如:当前在&#x2F;usr&#x2F;local</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜  local ls</span><br><span class="line">Caskroom   Frameworks bin        go         lib        sbin       var</span><br><span class="line">Cellar     Homebrew   etc        include    opt        share</span><br><span class="line">➜  local cd go</span><br></pre></td></tr></table></figure>
+
+<p>快捷方式(在相对路径中使用):</p>
+<p>单点符(.) : 表示当前目录; 双点符(..) :  表示当前目录的父目录。</p>
+<h4 id="8-迷路，我的当前位置在哪？"><a href="#8-迷路，我的当前位置在哪？" class="headerlink" title="8.迷路，我的当前位置在哪？"></a>8.迷路，我的当前位置在哪？</h4><p>pwd 显示当前目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@iz2ze76ybn73dvwmdij06zz local]# pwd</span><br><span class="line">/usr/local</span><br></pre></td></tr></table></figure>
+
+<h4 id="9-如何切换目录？"><a href="#9-如何切换目录？" class="headerlink" title="9.如何切换目录？"></a>9.如何切换目录？</h4><p>语法: cd destination</p>
+<p>destination : 相对文件路径或绝对文件路径</p>
+<p>可以跳到存在的任意目录。</p>
+<h4 id="10-如何查看目录中的文件？区分哪些是文件哪些是目录-递归查"><a href="#10-如何查看目录中的文件？区分哪些是文件哪些是目录-递归查" class="headerlink" title="10.如何查看目录中的文件？区分哪些是文件哪些是目录?递归查?"></a>10.如何查看目录中的文件？区分哪些是文件哪些是目录?递归查?</h4><p>ls 命令会用最基本的形式显示当前目录下的文件和目录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  local ls</span><br><span class="line">Caskroom   Frameworks bin        go         lib        sbin       var</span><br><span class="line">Cellar     Homebrew   etc        include    opt        share</span><br></pre></td></tr></table></figure>
+
+<p>可以看出默认是按照字母序展示的</p>
+<p>一般来说，ls命令回显示不同的颜色区分不同的文件类型,如果没有安装颜色插件可以用ls -F来区分哪些是目录（目录带&#x2F;)，哪些是文件（文件不带&#x2F;)</p>
+<p>  ls -R 递归展示出目录下以及子目录的文件，目录越多输出越多</p>
+<h4 id="11-创建文件？创建目录？批量创建"><a href="#11-创建文件？创建目录？批量创建" class="headerlink" title="11.创建文件？创建目录？批量创建?"></a>11.创建文件？创建目录？批量创建?</h4><p>创建文件:touch 文件名</p>
+<p>批量创建文件: touch  文件名 文件名 …</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  test touch a</span><br><span class="line">➜  test ls</span><br><span class="line">a</span><br><span class="line">➜  test touch b c</span><br><span class="line">➜  test ls</span><br><span class="line">a b c</span><br></pre></td></tr></table></figure>
+
+<p>创建目录：mkdir 目录名</p>
+<p>批量创建目录: mkdir 目录名 目录名 …</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  test mkdir aa</span><br><span class="line">➜  test mkdir bb cc</span><br><span class="line">➜  test ls</span><br><span class="line">a  aa b  bb c  cc</span><br><span class="line">➜  test ls -F</span><br><span class="line">a   aa/ b   bb/ c   cc/</span><br></pre></td></tr></table></figure>
+
+<h4 id="12-删除文件-强制删除？递归删除"><a href="#12-删除文件-强制删除？递归删除" class="headerlink" title="12.删除文件?强制删除？递归删除?"></a>12.删除文件?强制删除？递归删除?</h4><p>语法: rm destination</p>
+<p>-i 询问是否删除,-r 递归删除，-f 强制删除。</p>
+<p>rm不能删除有文件的目录,需要递归删除。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜  xktest rm jdk</span><br><span class="line">rm: jdk: is a directory</span><br><span class="line">➜  xktest rm -r jdk</span><br><span class="line">➜  xktest ls</span><br></pre></td></tr></table></figure>
+
+<p>rm -i 询问删除,建议大家平时删除多用 -i，确定一下再删除。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  xktest touch tomcat</span><br><span class="line">➜  xktest rm -i tomcat</span><br><span class="line">remove tomcat? n</span><br></pre></td></tr></table></figure>
+
+<p>rm -rf 会直接删除，没有警告信息，使用必须谨慎**。</p>
+<h4 id="13-制表符自动补全？"><a href="#13-制表符自动补全？" class="headerlink" title="13.制表符自动补全？"></a>13.制表符自动补全？</h4><p>有的时候文件的名字很长，很容易拼出错即使拼写对了也很浪费时间。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  xktest ls java*</span><br><span class="line">javaxiaokaxiu</span><br></pre></td></tr></table></figure>
+
+<p>   比如操作javaxiaokaxiu这个文件时，输入到java的时候，然后按制表键(tab)就会补全成javaxiaokaxiu,是不是方便多了。</p>
+<h4 id="14-复制文件"><a href="#14-复制文件" class="headerlink" title="14.复制文件"></a>14.复制文件</h4><p>语法: cp source target</p>
+<p>如果target不存在则直接创建，如果存在，默认不会提醒你是否需要覆盖，需要加-i就会询问你是否覆盖,n否y是。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  xktest cp a c</span><br><span class="line">➜  xktest cp -i a c</span><br><span class="line">overwrite c? (y/n [n]) y</span><br><span class="line">➜  xktest ls</span><br><span class="line">a c</span><br></pre></td></tr></table></figure>
+
+<h4 id="15-重新命名文件？移动文件？"><a href="#15-重新命名文件？移动文件？" class="headerlink" title="15.重新命名文件？移动文件？"></a>15.重新命名文件？移动文件？</h4><p>语法 ： mv soucre target </p>
+<p>重命名:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">➜  xktest ls</span><br><span class="line">➜  xktest touch java</span><br><span class="line">➜  xktest ls</span><br><span class="line">java</span><br><span class="line">➜  xktest mv java java1.8</span><br><span class="line">➜  xktest ls</span><br><span class="line">java1.8</span><br></pre></td></tr></table></figure>
+
+<p>移动文件:</p>
+<p>新建jdk目录把java1.8文件移动到jdk目录下。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">➜  xktest ls</span><br><span class="line">java1.8</span><br><span class="line">➜  xktest mkdir jdk</span><br><span class="line">➜  xktest mv java1.8 jdk</span><br><span class="line">➜  xktest ls -R</span><br><span class="line">jdk</span><br><span class="line"></span><br><span class="line">./jdk:</span><br><span class="line">java1.8</span><br></pre></td></tr></table></figure>
+
+<h4 id="16-什么是链接文件？"><a href="#16-什么是链接文件？" class="headerlink" title="16.什么是链接文件？"></a>16.什么是链接文件？</h4><p>如过需要在系统上维护同一文件的两份或者多份副本，除了保存多分单独的物理文件副本之外。还可以采用保存一份物理文件副本和多个虚拟副本的方法，这种虚拟的副本就叫做链接。</p>
+<h4 id="17-查看文件类型-字符编码？"><a href="#17-查看文件类型-字符编码？" class="headerlink" title="17.查看文件类型?字符编码？"></a>17.查看文件类型?字符编码？</h4><p>语法: file destination</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  apache file tomcat</span><br><span class="line">tomcat: ASCII text</span><br></pre></td></tr></table></figure>
+
+<p>可以看出，file命令可以显示文件的类型text以及字符编码ASCII</p>
+<h4 id="18-查看整个文件？按照有文本显示行号？无文本显示行号？"><a href="#18-查看整个文件？按照有文本显示行号？无文本显示行号？" class="headerlink" title="18.查看整个文件？按照有文本显示行号？无文本显示行号？"></a>18.查看整个文件？按照有文本显示行号？无文本显示行号？</h4><p>语法 : cat destination</p>
+<p>-n 显示行号，-b 有文本的显示行号。 （默认是不显示行号的)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">➜  apache cat -n tomcat</span><br><span class="line">     1  text</span><br><span class="line">     2  text</span><br><span class="line">     3</span><br><span class="line">     4  start</span><br><span class="line">     5  stop</span><br><span class="line">     6  restart</span><br><span class="line">     7  end</span><br><span class="line">➜  apache cat -b tomcat</span><br><span class="line">     1  text</span><br><span class="line">     2  text</span><br><span class="line"></span><br><span class="line">     3  start</span><br><span class="line">     4  stop</span><br><span class="line">     5  restart</span><br><span class="line">     6  end</span><br></pre></td></tr></table></figure>
+
+<h4 id="19-查看部分文件"><a href="#19-查看部分文件" class="headerlink" title="19.查看部分文件"></a>19.查看部分文件</h4><p>语法 : tail  destination</p>
+<p>默认情况会展示文件的末尾10行。 -n 行数，显示最后n行。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  apache tail -n 2 tomcat</span><br><span class="line">restart</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
+<p>语法: head destination </p>
+<p>默认情况会展示文件的开头10行。 -n 行数，显示开头n行。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  apache head -n 2 tomcat</span><br><span class="line">text</span><br><span class="line">text</span><br></pre></td></tr></table></figure>
+
+<h4 id="20-数据排序-对数字进行排序？对月份排序？"><a href="#20-数据排序-对数字进行排序？对月份排序？" class="headerlink" title="20.数据排序?对数字进行排序？对月份排序？"></a>20.数据排序?对数字进行排序？对月份排序？</h4><p>默认情况下，文件的数据展示是按照原顺序展示的。sort命令可以对文本文件中的数据进行排序。sort默认会把数据当成字符处理。</p>
+<p>语法: sort destination</p>
+<p>sort -n 所以排序数字时需要用-n，它的含义是说当前排序是的数字。</p>
+<p>sort -M 比如月份Jan、Feb、Mar，如果希望它按照月份排序，加入-M就会按照月份的大小来排序。</p>
+<h4 id="21-查找匹配数据？反向搜？"><a href="#21-查找匹配数据？反向搜？" class="headerlink" title="21.查找匹配数据？反向搜？"></a>21.查找匹配数据？反向搜？</h4><p>语法: grep [options] pattern [file]</p>
+<p>该命令会查找匹配执行模式的字符串的行，并输出。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  apache grep start tomcat</span><br><span class="line">start</span><br><span class="line">restart</span><br></pre></td></tr></table></figure>
+
+<p>-v 反向搜</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  apache grep -v start tomcat</span><br><span class="line">text</span><br><span class="line">text</span><br><span class="line"></span><br><span class="line">stop</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
+<p>-n 显示行号</p>
+<p>-c 显示匹配的行数</p>
+<h4 id="22-压缩工具有哪些"><a href="#22-压缩工具有哪些" class="headerlink" title="22.压缩工具有哪些?"></a>22.压缩工具有哪些?</h4><p><img src="https://gitee.com/yizhibuerdai/Imagetools/raw/master/images/image-20200421122324314.png" alt="image-20200421122324314"></p>
+<h4 id="23-如何压缩文件？如何解压文件"><a href="#23-如何压缩文件？如何解压文件" class="headerlink" title="23.如何压缩文件？如何解压文件?"></a>23.如何压缩文件？如何解压文件?</h4><p>比如以.gz的格式举例。</p>
+<p>压缩语法: gzip destination</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  apache gzip tomcat</span><br><span class="line">➜  apache ls</span><br><span class="line">tomcat.gz</span><br></pre></td></tr></table></figure>
+
+<p>解压语法: gunzip destination</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  apache gunzip tomcat.gz</span><br><span class="line">➜  apache ls</span><br><span class="line">tomcat</span><br></pre></td></tr></table></figure>
+
+<h4 id="24-Linux广泛使用的归档数据方法"><a href="#24-Linux广泛使用的归档数据方法" class="headerlink" title="24.Linux广泛使用的归档数据方法?"></a>24.Linux广泛使用的归档数据方法?</h4><p>虽然zip命令能压缩和解压单个文件，但是更多的时候广泛使用tar命令来做归档。</p>
+<p>语法: tar function [options] obj1 obj2</p>
+<p><img src="https://gitee.com/yizhibuerdai/Imagetools/raw/master/images/image-20200421122932671.png" alt="image-20200421122932671"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">➜  apache tar -cvf service.tar service1 service2 // 创建规定文件service.tar</span><br><span class="line">a service1</span><br><span class="line">a service2</span><br><span class="line">➜  apache tar -tf service.tar //查看文件中的目录内容</span><br><span class="line">service1</span><br><span class="line">service2</span><br><span class="line">➜  apache tar zxvf service.tar //解压</span><br><span class="line">x service1</span><br><span class="line">x service2</span><br></pre></td></tr></table></figure>
+
+<h4 id="25-如何查看命令历史记录"><a href="#25-如何查看命令历史记录" class="headerlink" title="25.如何查看命令历史记录?"></a>25.如何查看命令历史记录?</h4><p>   history 命令可以展示你用的命令的历史记录。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">4463  touch service1 service2</span><br><span class="line">4464  ls</span><br><span class="line">4465  tar -cvf service.tar service1 service2</span><br><span class="line">4466  tar -tf service.tar</span><br><span class="line">4467  tar zxvf service</span><br><span class="line">4468  tar zxvf service.t</span><br><span class="line">4469  tar zxvf service.tar</span><br><span class="line">4470  ls</span><br><span class="line">4471  tar -zxvf  service.tar</span><br><span class="line">4472  ls</span><br></pre></td></tr></table></figure>
+
+<h4 id="26-查看已有别名-建立属于自己的别名"><a href="#26-查看已有别名-建立属于自己的别名" class="headerlink" title="26.查看已有别名?建立属于自己的别名?"></a>26.查看已有别名?建立属于自己的别名?</h4><p>alias -p 查看当前可用别名</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@iz2ze76ybn73dvwmdij06zz ~]# alias -p</span><br><span class="line">alias cp=&#x27;cp -i&#x27;</span><br><span class="line">alias egrep=&#x27;egrep —color=auto&#x27;</span><br><span class="line">alias fgrep=&#x27;fgrep —color=auto&#x27;</span><br><span class="line">alias grep=&#x27;grep —color=auto&#x27;</span><br><span class="line">alias l.=&#x27;ls -d .* —color=auto&#x27;</span><br><span class="line">alias ll=&#x27;ls -l —color=auto&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>alias li &#x3D; ‘ls  -li’ 创建别名</p>
+<h4 id="27-什么是环境变量？"><a href="#27-什么是环境变量？" class="headerlink" title="27.什么是环境变量？"></a>27.什么是环境变量？</h4><p>bash shell用一个叫作环境变量(environment variable)的特性来存储有关shell会话和工作环境的信息。这项特性允许你在内存中存储数据，以便程序或shell中运行的脚本能够轻松访问到它们。这也是存储持久数据的一种简便方法。</p>
+<p>在bash shell中，环境变量分为两类: </p>
+<p> 全局变量：对于 shell会话和所有生成的子shell都是可见的。 局部变量： 只对创建他们的shell可见。</p>
+<h4 id="28-储存用户的文件是-包括哪些信息？"><a href="#28-储存用户的文件是-包括哪些信息？" class="headerlink" title="28.储存用户的文件是?包括哪些信息？"></a>28.储存用户的文件是?包括哪些信息？</h4><p>&#x2F;etc&#x2F;passwd存储来一些用户有关的信息。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@iz2ze76ybn73dvwmdij06zz ~]# cat /etc/passwd</span><br><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">bin:x:1:1:bin:/bin:/sbin/nologin</span><br></pre></td></tr></table></figure>
+
+<p>文件信息包括如下内容。</p>
+<ul>
+<li>登录用户名</li>
+<li>用户密码</li>
+<li>用户账户的UID(数字形式)</li>
+<li>用户账户的组ID(GID)(数字形式) </li>
+<li>用户账户的文本描述(称为备注字段) </li>
+<li>用户HOME目录的位置</li>
+<li>用户的默认shell</li>
+</ul>
+<h4 id="29-账户默认信息？添加账户？删除用户？"><a href="#29-账户默认信息？添加账户？删除用户？" class="headerlink" title="29.账户默认信息？添加账户？删除用户？"></a>29.账户默认信息？添加账户？删除用户？</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@iz2ze76ybn73dvwmdij06zz ~]# useradd -D//查看系统默认创建用户信息</span><br><span class="line">GROUP=100</span><br><span class="line">HOME=/home</span><br><span class="line">INACTIVE=-1</span><br><span class="line">EXPIRE=</span><br><span class="line">SHELL=/bin/bash</span><br><span class="line">SKEL=/etc/skel</span><br><span class="line">CREATE_MAIL_SPOOL=yes</span><br><span class="line">[root@iz2ze76ybn73dvwmdij06zz ~]# useradd xiaoka//添加用户</span><br><span class="line"></span><br><span class="line">[root@iz2ze76ybn73dvwmdij06zz /]# userdel xiaoka//删除用户</span><br></pre></td></tr></table></figure>
+
+<h4 id="30-查看组信息？如何创建组？删除组？"><a href="#30-查看组信息？如何创建组？删除组？" class="headerlink" title="30.查看组信息？如何创建组？删除组？"></a>30.查看组信息？如何创建组？删除组？</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@iz2ze76ybn73dvwmdij06zz ~]# cat /etc/group</span><br><span class="line">root:x:0:</span><br><span class="line">bin:x:1:</span><br><span class="line">daemon:x:2:</span><br><span class="line">sys:x:3:</span><br><span class="line">adm:x:4:</span><br><span class="line">tty:x:5:</span><br><span class="line">disk:x:6:</span><br><span class="line">[root@iz2ze76ybn73dvwmdij06zz ~]# groupadd java //创建组</span><br><span class="line">[root@iz2ze76ybn73dvwmdij06zz ~]# groupdel java //创建组</span><br></pre></td></tr></table></figure>
+
+<h4 id="31-文件描述符-每个描述符的含义"><a href="#31-文件描述符-每个描述符的含义" class="headerlink" title="31.文件描述符?每个描述符的含义?"></a>31.文件描述符?每个描述符的含义?</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@iz2ze76ybn73dvwmdij06zz xiaoka]# ls -l</span><br><span class="line">总用量 0</span><br><span class="line">-rw-r—r— 1 root root 0 4月  21 13:17 a</span><br><span class="line">-rw-r—r— 1 root root 0 4月  21 13:17 b</span><br><span class="line">-rw-r—r— 1 root root 0 4月  21 13:17 c</span><br><span class="line">-rw-r—r— 1 root root 0 4月  21 13:17 d</span><br><span class="line">-rw-r—r— 1 root root 0 4月  21 13:17 e</span><br></pre></td></tr></table></figure>
+
+<p>1、文件类型:</p>
+<ul>
+<li>-代表文件</li>
+<li>d代表目录</li>
+<li>l代表链接</li>
+<li>c代表字符型设备</li>
+<li>b代表块设备</li>
+<li>n代表网络设备</li>
+</ul>
+<p>2、访问权限符号:</p>
+<ul>
+<li>r代表对象是可读的 </li>
+<li>w代表对象是可写的</li>
+<li>x代表对象是可执行的</li>
+</ul>
+<p>若没有某种权限，在该权限位会出现单破折线。</p>
+<p>3、这3组权限分别对应对象的3个安全级别:</p>
+<ul>
+<li>对象的属主</li>
+<li>对象的属组</li>
+<li>系统其他用户</li>
+</ul>
+<h4 id="31-修改权限"><a href="#31-修改权限" class="headerlink" title="31.修改权限?"></a>31.修改权限?</h4><p>chmod options mode file</p>
+<p>比如给文件附加可以执行权限:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@xiaoka ~]# chmod +x filename</span><br></pre></td></tr></table></figure>
+
+<h4 id="32-如何执行可以执行文件"><a href="#32-如何执行可以执行文件" class="headerlink" title="32.如何执行可以执行文件?"></a>32.如何执行可以执行文件?</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@xiaoka ~]# sh sleep.sh</span><br><span class="line">hello,xiaoka</span><br><span class="line">[root@xiaoka ~]# ./sleep.sh</span><br><span class="line">hello,xiaoka</span><br></pre></td></tr></table></figure>
+
+<h4 id="33-列出已经安装的包？安装软件？更新软件？卸载"><a href="#33-列出已经安装的包？安装软件？更新软件？卸载" class="headerlink" title="33.列出已经安装的包？安装软件？更新软件？卸载?"></a>33.列出已经安装的包？安装软件？更新软件？卸载?</h4><p>列出已经安装的包: yum list installed</p>
+<p>安装软件: yum install package_name</p>
+<p>更新软件: yum update package_name</p>
+<p>卸载软件:yum remove package_name &#x2F;&#x2F;只删除软件包保留数据文件和配置文件</p>
+<p>如果不希望保留数据文件和配置文件</p>
+<p>可以执行:yum erase package_name</p>
+<h4 id="34-源码安装通常的路子"><a href="#34-源码安装通常的路子" class="headerlink" title="34.源码安装通常的路子?"></a>34.源码安装通常的路子?</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf xx.gz //解包</span><br><span class="line">cd xx</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+
+<h4 id="35-vim编辑器几种操作模式？基本操作"><a href="#35-vim编辑器几种操作模式？基本操作" class="headerlink" title="35.vim编辑器几种操作模式？基本操作?"></a>35.vim编辑器几种操作模式？基本操作?</h4><p>操作模式: </p>
+<ul>
+<li>普通模式</li>
+<li>插入模式</li>
+</ul>
+<p> 基础操作:</p>
+<ul>
+<li>h:左移一个字符。</li>
+<li>j:下移一行(文本中的下一行)。 </li>
+<li>k:上移一行(文本中的上一行)。 </li>
+<li>l:右移一个字符。</li>
+</ul>
+<p>vim提供了一些能够提高移动速度的命令:</p>
+<ul>
+<li>PageDown(或Ctrl+F):下翻一屏</li>
+<li>PageUp(或Ctrl+B):上翻一屏。</li>
+<li>G:移到缓冲区的最后一行。</li>
+<li>num G:移动到缓冲区中的第num行。 </li>
+<li>gg:移到缓冲区的第一行。</li>
+</ul>
+<p>退出vim:</p>
+<ul>
+<li>q:如果未修改缓冲区数据，退出。</li>
+<li>q!:取消所有对缓冲区数据的修改并退出。</li>
+<li>w filename:将文件保存到另一个文件中。</li>
+<li>wq:将缓冲区数据保存到文件中并退出。</li>
+</ul>
+<h4 id="36-查看设备还有多少磁盘空间"><a href="#36-查看设备还有多少磁盘空间" class="headerlink" title="36.查看设备还有多少磁盘空间?"></a>36.查看设备还有多少磁盘空间?</h4><p>df 可以查看所有已挂在磁盘的使用情况。</p>
+<p>-m 用兆字节，G代替g字节</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@iz2ze76ybn73dvwmdij06zz ~]# df</span><br><span class="line">文件系统          1K-块    已用     可用 已用% 挂载点</span><br><span class="line">devtmpfs        1931568       0  1931568    0% /dev</span><br><span class="line">tmpfs           1940960       0  1940960    0% /dev/shm</span><br><span class="line">tmpfs           1940960     720  1940240    1% /run</span><br><span class="line">tmpfs           1940960       0  1940960    0% /sys/fs/cgroup</span><br><span class="line">/dev/vda1      41152812 9068544 30180560   24% /</span><br><span class="line">tmpfs            388192       0   388192    0% /run/user/0</span><br></pre></td></tr></table></figure>
+
+<h6 id="快速判断某个特定目录是否有超大文件？"><a href="#快速判断某个特定目录是否有超大文件？" class="headerlink" title="快速判断某个特定目录是否有超大文件？"></a>快速判断某个特定目录是否有超大文件？</h6><p>默认情况，du会显示当前目录的所有文件、目录、子目录的磁盘使用情况。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@iz2ze76ybn73dvwmdij06zz src]# du</span><br><span class="line">4 ./debug</span><br><span class="line">4 ./kernels</span><br><span class="line">12</span><br></pre></td></tr></table></figure>
+
+<h4 id="37-默认进程信息显示"><a href="#37-默认进程信息显示" class="headerlink" title="37.默认进程信息显示?"></a>37.默认进程信息显示?</h4><p>ps它能输出运行在系统上的所有程序的许多信息。</p>
+<p>默认情况下ps值显示运行在当前控制台下的当前用户的进程。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@iz2ze76ybn73dvwmdij06zz ~]# ps</span><br><span class="line">  PID TTY          TIME CMD</span><br><span class="line">10102 pts/0    00:00:00 bash</span><br><span class="line">10131 pts/0    00:00:00 ps</span><br></pre></td></tr></table></figure>
+
+<h4 id="38-实时监测进程"><a href="#38-实时监测进程" class="headerlink" title="38.实时监测进程"></a>38.实时监测进程</h4><p>与ps相比，top可以实时监控进程信息。</p>
+<p><img src="https://gitee.com/yizhibuerdai/Imagetools/raw/master/images/image-20200421114633852.png" alt="image-20200421114633852"></p>
+<p>平均负载有3个值:最近1分钟的、最近5分钟的和最近15分钟的平均负载。值越大说明系统 的负载越高。由于进程短期的突发性活动，出现最近1分钟的高负载值也很常见，但如果近15分 钟内的平均负载都很高，就说明系统可能有问题。</p>
+<h4 id="39-如何中断一个进程"><a href="#39-如何中断一个进程" class="headerlink" title="39.如何中断一个进程?"></a>39.如何中断一个进程?</h4><p>在一个终端中， Ctrl + c</p>
+<p>通过这个命令许多（不是全部）命令行程序都可以被中断。</p>
+<h4 id="40-如何把一个进程放到后台运行？"><a href="#40-如何把一个进程放到后台运行？" class="headerlink" title="40.如何把一个进程放到后台运行？"></a>40.如何把一个进程放到后台运行？</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@iz2ze76ybn73dvwmdij06zz ~]# ./sleep.sh &amp;</span><br></pre></td></tr></table></figure>
+
+<p>此时，进程并不能被Ctrl + c 中断。</p>
+<h4 id="41-如何停止一个进程"><a href="#41-如何停止一个进程" class="headerlink" title="41.如何停止一个进程?"></a>41.如何停止一个进程?</h4><p>kill命令被用来给程序发送信号。如果没有指定信号，默认发送TERM(终止）信号。</p>
+<p>语法 : kill [-signal] PID …</p>
+<p><img src="https://gitee.com/yizhibuerdai/Imagetools/raw/master/images/image-20200421141556974.png" alt="image-20200421141556974"></p>
+<p>#### </p>
+<h4 id="42-验证网络可链接命令是什么？什么原理？"><a href="#42-验证网络可链接命令是什么？什么原理？" class="headerlink" title="42.验证网络可链接命令是什么？什么原理？"></a>42.验证网络可链接命令是什么？什么原理？</h4><p> ping。这个 ping 命令发送一个特殊的网络数据包(叫做 IMCP ECHO REQUEST)到一台指定的主机。大多数接收这个包的网络设备将会回复它，来允许网络连接验证。</p>
+<p><img src="https://gitee.com/yizhibuerdai/Imagetools/raw/master/images/image-20200421142307602.png" alt="image-20200421142307602"></p>
+<p>一旦启动，ping会持续在特定时间（默认1秒）发送数据包。</p>
+<h4 id="43-查看某端口是否被占用"><a href="#43-查看某端口是否被占用" class="headerlink" title="43.查看某端口是否被占用?"></a>43.查看某端口是否被占用?</h4><p>netstat -ntulp|grep 8080</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@iz2ze76ybn73dvwmdij06zz ~]# netstat -ntulp|grep 8080</span><br><span class="line">tcp        0      0 0.0.0.0:8080            0.0.0.0:*               LISTEN      4517/java</span><br></pre></td></tr></table></figure>
+
+<p>参数说明:</p>
+<ul>
+<li>-t (tcp) 仅显示tcp相关选项</li>
+<li>-u (udp)仅显示udp相关选项</li>
+<li>-n 拒绝显示别名，能显示数字的全部转化为数字</li>
+<li>-l 仅列出在Listen(监听)的服务状态</li>
+<li>-p 显示建立相关链接的程序名</li>
+</ul>
+<h4 id="44-如何查找匹配的文件？基于文件属性？"><a href="#44-如何查找匹配的文件？基于文件属性？" class="headerlink" title="44.如何查找匹配的文件？基于文件属性？"></a>44.如何查找匹配的文件？基于文件属性？</h4><p> find 程序能基于各种各样的属性，搜索一个给 定目录(以及它的子目录)，来查找文件。</p>
+<p>find 命令的最简单使用是，搜索一个或多个目录。</p>
+<p>普通查找，按照name查找:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@iz2ze76ybn73dvwmdij06zz ~]# find -name xiaoka</span><br><span class="line">./xiaoka</span><br></pre></td></tr></table></figure>
+
+<p>文件类型查找:</p>
+<p>比如,输出我们的家目录文件数量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@iz2ze76ybn73dvwmdij06zz ~]# find ~|wc -l</span><br><span class="line">17130</span><br></pre></td></tr></table></figure>
+
+<p>根据文件类型查:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@iz2ze76ybn73dvwmdij06zz ~]#  find ~ -type d | wc -l</span><br><span class="line">7340</span><br></pre></td></tr></table></figure>
+
+<p>find支持的类型: b 块设备文件、 c 字符设备文件、d 目录、f 普通文件、l 符号链接</p>
+<h4 id="45-如何查看当前主机名？如何修改？如何重启后生效？"><a href="#45-如何查看当前主机名？如何修改？如何重启后生效？" class="headerlink" title="45.如何查看当前主机名？如何修改？如何重启后生效？"></a>45.如何查看当前主机名？如何修改？如何重启后生效？</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@iz2ze76ybn73dvwmdij06zz ~]# hostname//查看当前主机名</span><br><span class="line">iz2ze76ybn73dvwmdij06zz</span><br><span class="line">[root@iz2ze76ybn73dvwmdij06zz ~]# hostname xiaoka//修改当前主机名</span><br><span class="line">[root@iz2ze76ybn73dvwmdij06zz ~]# hostname</span><br><span class="line">xiaoka</span><br></pre></td></tr></table></figure>
+
+<p>大家知道一般来讲命令重启就会失效，目前基本上用的centos7的比较多，两种方式可以支持重启生效。</p>
+<p>一、命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@iz2ze76ybn73dvwmdij06zz ~]# hostnamectl set-hostname xiaoka</span><br><span class="line">[root@iz2ze76ybn73dvwmdij06zz ~]# hostname</span><br><span class="line">xiaoka</span><br><span class="line">[root@xiaoka ~]#</span><br></pre></td></tr></table></figure>
+
+<p> 二、修改配置文件:&#x2F;etc&#x2F;hostname</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@xiaoka ~]# vim /etc/hostname</span><br></pre></td></tr></table></figure>
+
+<h4 id="46-如何写一条规则，拒绝某个ip访问本机8080端口"><a href="#46-如何写一条规则，拒绝某个ip访问本机8080端口" class="headerlink" title="46.如何写一条规则，拒绝某个ip访问本机8080端口?"></a>46.如何写一条规则，拒绝某个ip访问本机8080端口?</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -s ip -p tcp —dport 8080 -j REJECT</span><br></pre></td></tr></table></figure>
+
+<h4 id="47-哪个文件包含了主机名和ip的映射关系"><a href="#47-哪个文件包含了主机名和ip的映射关系" class="headerlink" title="47.哪个文件包含了主机名和ip的映射关系?"></a>47.哪个文件包含了主机名和ip的映射关系?</h4><p>&#x2F;etc&#x2F;hosts</p>
+<h4 id="48-如何用sed只打印第5行-删除第一行？替换字符串"><a href="#48-如何用sed只打印第5行-删除第一行？替换字符串" class="headerlink" title="48.如何用sed只打印第5行?删除第一行？替换字符串?"></a>48.如何用sed只打印第5行?删除第一行？替换字符串?</h4><p> 只打印第5行:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  apache sed -n &quot;5p&quot; tomcat</span><br><span class="line">stop</span><br></pre></td></tr></table></figure>
+
+<p>删除第一行:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@xiaoka ~]# cat story</span><br><span class="line">Long ago a lion and a bear saw a kid.</span><br><span class="line">They sprang upon it at the same time.</span><br><span class="line">The lion said to the bear, “I caught this kid first, and so this is mine.”</span><br><span class="line">[root@xiaoka ~]# cat story</span><br><span class="line">They sprang upon it at the same time.</span><br><span class="line">The lion said to the bear, “I caught this kid first, and so this is mine.”</span><br></pre></td></tr></table></figure>
+
+<p>替换字符串:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">➜  apache cat story</span><br><span class="line">Long ago a lion and a bear saw a kid.</span><br><span class="line">They sprang upon it at the same time.</span><br><span class="line">The lion said to the bear, “I caught this kid first, and so this is mine.”</span><br><span class="line">➜  apache sed &#x27;s#this#that#g&#x27; story</span><br><span class="line">Long ago a lion and a bear saw a kid.</span><br><span class="line">They sprang upon it at the same time.</span><br><span class="line">The lion said to the bear, “I caught that kid first, and so that is mine.”</span><br></pre></td></tr></table></figure>
+
+<h4 id="49-打印文件第一行到第三行"><a href="#49-打印文件第一行到第三行" class="headerlink" title="49.打印文件第一行到第三行?"></a>49.打印文件第一行到第三行?</h4><p>​    文件tomcat中内容:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">➜  apache cat tomcat</span><br><span class="line">text21</span><br><span class="line">text22</span><br><span class="line">text23</span><br><span class="line">start</span><br><span class="line">stop</span><br><span class="line">restart</span><br><span class="line">end</span><br><span class="line">➜ apache head -3 tomcat</span><br><span class="line">text21</span><br><span class="line">text22</span><br><span class="line">text23</span><br><span class="line">➜ apache sed -n &#x27;1,3p&#x27; tomcat</span><br><span class="line">text21</span><br><span class="line">text22</span><br><span class="line">text23</span><br><span class="line">➜ apache awk &#x27;NR&gt;=1&amp;&amp;NR&lt;=3&#x27; tomcat</span><br><span class="line">text21</span><br><span class="line">text22</span><br><span class="line">text23</span><br></pre></td></tr></table></figure>
+
+<h4 id="50-如何用awk查看第2行倒数第3个字段"><a href="#50-如何用awk查看第2行倒数第3个字段" class="headerlink" title="50.如何用awk查看第2行倒数第3个字段?"></a>50.如何用awk查看第2行倒数第3个字段?</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  apache awk &#x27;NR==3&#123;print $(NF-2)&#125;&#x27; story</span><br><span class="line">this</span><br><span class="line">➜  apache cat story</span><br><span class="line">Long ago a lion and a bear saw a kid.</span><br><span class="line">They sprang upon it at the same time.</span><br><span class="line">The lion said to the bear, “I caught this kid first, and so this is mine.”</span><br></pre></td></tr></table></figure>
+
+<p>参考:</p>
+<ul>
+<li><p>《鸟哥Linux私房菜》</p>
+</li>
+<li><p>《快乐的命令行》</p>
+</li>
+<li><p>《Linux命令行与shell脚本编程大全(第3版）》</p>
+</li>
+<li><p>《Linux从入门到精通》</p>
+</li>
+<li><p>百度百科</p>
+<p><img src="https://gitee.com/yizhibuerdai/Imagetools/raw/master/images/common1.png" alt="WechatIMG360"></p>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">miiiss</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/04/19/Linux-1/">http://example.com/2023/04/19/Linux-1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">林</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/linux/">linux</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.pixabay.com/photo/2023/04/09/05/22/flowers-7910753__340.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/05/11/interview-day1/"><img class="prev-cover" src="https://images.pexels.com/photos/15860716/pexels-photo-15860716.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400&amp;lazy=load" onerror="onerror=null;src='/'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">interview_day1</div></div></a></div><div class="next-post pull-right"><a href="/2023/04/19/linux1/"><img class="next-cover" src="https://cdn.pixabay.com/photo/2023/04/15/17/17/forest-floor-7928213__340.jpg" onerror="onerror=null;src='/'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Linux1</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/04/19/linux1/" title="Linux1"><img class="cover" src="https://cdn.pixabay.com/photo/2023/04/15/17/17/forest-floor-7928213__340.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-19</div><div class="title">Linux1</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/pexels-anh-dang-16372799.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">miiiss</div><div class="author-info__description">时间过得真快是不是c</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/lifeloveratking"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=535668586" target="_blank" title=""><i class="fa fa-qq"></i></a><a class="social-icon" href="mailto:sviptzk@163.com" target="_blank" title=""><i class="fa fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title=""><i class="fa fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">加油</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux"><span class="toc-number">1.</span> <span class="toc-text">Linux</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFLinux%EF%BC%9F"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.什么是Linux？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Linux%E5%86%85%E6%A0%B8%E4%B8%BB%E8%A6%81%E8%B4%9F%E8%B4%A3%E5%93%AA%E4%BA%9B%E5%8A%9F%E8%83%BD"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.Linux内核主要负责哪些功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.交互方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%90%AF%E5%8A%A8shell"><span class="toc-number">1.0.4.</span> <span class="toc-text">4.启动shell</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-bash%E6%89%8B%E5%86%8C"><span class="toc-number">1.0.5.</span> <span class="toc-text">5.bash手册</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E7%99%BB%E9%99%86%E5%90%8E%E4%BD%A0%E5%9C%A8%E7%9A%84%E4%BD%8D%E7%BD%AE%EF%BC%9F"><span class="toc-number">1.0.6.</span> <span class="toc-text">6.登陆后你在的位置？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E7%BB%9D%E5%AF%B9%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84-%E7%9B%B8%E5%AF%B9%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84%EF%BC%9F%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%EF%BC%9F"><span class="toc-number">1.0.7.</span> <span class="toc-text">7.绝对文件路径?相对文件路径？快捷方式？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E8%BF%B7%E8%B7%AF%EF%BC%8C%E6%88%91%E7%9A%84%E5%BD%93%E5%89%8D%E4%BD%8D%E7%BD%AE%E5%9C%A8%E5%93%AA%EF%BC%9F"><span class="toc-number">1.0.8.</span> <span class="toc-text">8.迷路，我的当前位置在哪？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-%E5%A6%82%E4%BD%95%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95%EF%BC%9F"><span class="toc-number">1.0.9.</span> <span class="toc-text">9.如何切换目录？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%BD%95%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%EF%BC%9F%E5%8C%BA%E5%88%86%E5%93%AA%E4%BA%9B%E6%98%AF%E6%96%87%E4%BB%B6%E5%93%AA%E4%BA%9B%E6%98%AF%E7%9B%AE%E5%BD%95-%E9%80%92%E5%BD%92%E6%9F%A5"><span class="toc-number">1.0.10.</span> <span class="toc-text">10.如何查看目录中的文件？区分哪些是文件哪些是目录?递归查?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%EF%BC%9F%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95%EF%BC%9F%E6%89%B9%E9%87%8F%E5%88%9B%E5%BB%BA"><span class="toc-number">1.0.11.</span> <span class="toc-text">11.创建文件？创建目录？批量创建?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6-%E5%BC%BA%E5%88%B6%E5%88%A0%E9%99%A4%EF%BC%9F%E9%80%92%E5%BD%92%E5%88%A0%E9%99%A4"><span class="toc-number">1.0.12.</span> <span class="toc-text">12.删除文件?强制删除？递归删除?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-%E5%88%B6%E8%A1%A8%E7%AC%A6%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8%EF%BC%9F"><span class="toc-number">1.0.13.</span> <span class="toc-text">13.制表符自动补全？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6"><span class="toc-number">1.0.14.</span> <span class="toc-text">14.复制文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#15-%E9%87%8D%E6%96%B0%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6%EF%BC%9F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%EF%BC%9F"><span class="toc-number">1.0.15.</span> <span class="toc-text">15.重新命名文件？移动文件？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16-%E4%BB%80%E4%B9%88%E6%98%AF%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6%EF%BC%9F"><span class="toc-number">1.0.16.</span> <span class="toc-text">16.什么是链接文件？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#17-%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B-%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%EF%BC%9F"><span class="toc-number">1.0.17.</span> <span class="toc-text">17.查看文件类型?字符编码？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#18-%E6%9F%A5%E7%9C%8B%E6%95%B4%E4%B8%AA%E6%96%87%E4%BB%B6%EF%BC%9F%E6%8C%89%E7%85%A7%E6%9C%89%E6%96%87%E6%9C%AC%E6%98%BE%E7%A4%BA%E8%A1%8C%E5%8F%B7%EF%BC%9F%E6%97%A0%E6%96%87%E6%9C%AC%E6%98%BE%E7%A4%BA%E8%A1%8C%E5%8F%B7%EF%BC%9F"><span class="toc-number">1.0.18.</span> <span class="toc-text">18.查看整个文件？按照有文本显示行号？无文本显示行号？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#19-%E6%9F%A5%E7%9C%8B%E9%83%A8%E5%88%86%E6%96%87%E4%BB%B6"><span class="toc-number">1.0.19.</span> <span class="toc-text">19.查看部分文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20-%E6%95%B0%E6%8D%AE%E6%8E%92%E5%BA%8F-%E5%AF%B9%E6%95%B0%E5%AD%97%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F%EF%BC%9F%E5%AF%B9%E6%9C%88%E4%BB%BD%E6%8E%92%E5%BA%8F%EF%BC%9F"><span class="toc-number">1.0.20.</span> <span class="toc-text">20.数据排序?对数字进行排序？对月份排序？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21-%E6%9F%A5%E6%89%BE%E5%8C%B9%E9%85%8D%E6%95%B0%E6%8D%AE%EF%BC%9F%E5%8F%8D%E5%90%91%E6%90%9C%EF%BC%9F"><span class="toc-number">1.0.21.</span> <span class="toc-text">21.查找匹配数据？反向搜？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#22-%E5%8E%8B%E7%BC%A9%E5%B7%A5%E5%85%B7%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">1.0.22.</span> <span class="toc-text">22.压缩工具有哪些?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#23-%E5%A6%82%E4%BD%95%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6%EF%BC%9F%E5%A6%82%E4%BD%95%E8%A7%A3%E5%8E%8B%E6%96%87%E4%BB%B6"><span class="toc-number">1.0.23.</span> <span class="toc-text">23.如何压缩文件？如何解压文件?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#24-Linux%E5%B9%BF%E6%B3%9B%E4%BD%BF%E7%94%A8%E7%9A%84%E5%BD%92%E6%A1%A3%E6%95%B0%E6%8D%AE%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.24.</span> <span class="toc-text">24.Linux广泛使用的归档数据方法?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25-%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95"><span class="toc-number">1.0.25.</span> <span class="toc-text">25.如何查看命令历史记录?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#26-%E6%9F%A5%E7%9C%8B%E5%B7%B2%E6%9C%89%E5%88%AB%E5%90%8D-%E5%BB%BA%E7%AB%8B%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%88%AB%E5%90%8D"><span class="toc-number">1.0.26.</span> <span class="toc-text">26.查看已有别名?建立属于自己的别名?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#27-%E4%BB%80%E4%B9%88%E6%98%AF%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%EF%BC%9F"><span class="toc-number">1.0.27.</span> <span class="toc-text">27.什么是环境变量？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#28-%E5%82%A8%E5%AD%98%E7%94%A8%E6%88%B7%E7%9A%84%E6%96%87%E4%BB%B6%E6%98%AF-%E5%8C%85%E6%8B%AC%E5%93%AA%E4%BA%9B%E4%BF%A1%E6%81%AF%EF%BC%9F"><span class="toc-number">1.0.28.</span> <span class="toc-text">28.储存用户的文件是?包括哪些信息？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#29-%E8%B4%A6%E6%88%B7%E9%BB%98%E8%AE%A4%E4%BF%A1%E6%81%AF%EF%BC%9F%E6%B7%BB%E5%8A%A0%E8%B4%A6%E6%88%B7%EF%BC%9F%E5%88%A0%E9%99%A4%E7%94%A8%E6%88%B7%EF%BC%9F"><span class="toc-number">1.0.29.</span> <span class="toc-text">29.账户默认信息？添加账户？删除用户？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#30-%E6%9F%A5%E7%9C%8B%E7%BB%84%E4%BF%A1%E6%81%AF%EF%BC%9F%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E7%BB%84%EF%BC%9F%E5%88%A0%E9%99%A4%E7%BB%84%EF%BC%9F"><span class="toc-number">1.0.30.</span> <span class="toc-text">30.查看组信息？如何创建组？删除组？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#31-%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6-%E6%AF%8F%E4%B8%AA%E6%8F%8F%E8%BF%B0%E7%AC%A6%E7%9A%84%E5%90%AB%E4%B9%89"><span class="toc-number">1.0.31.</span> <span class="toc-text">31.文件描述符?每个描述符的含义?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#31-%E4%BF%AE%E6%94%B9%E6%9D%83%E9%99%90"><span class="toc-number">1.0.32.</span> <span class="toc-text">31.修改权限?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#32-%E5%A6%82%E4%BD%95%E6%89%A7%E8%A1%8C%E5%8F%AF%E4%BB%A5%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6"><span class="toc-number">1.0.33.</span> <span class="toc-text">32.如何执行可以执行文件?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#33-%E5%88%97%E5%87%BA%E5%B7%B2%E7%BB%8F%E5%AE%89%E8%A3%85%E7%9A%84%E5%8C%85%EF%BC%9F%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%EF%BC%9F%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6%EF%BC%9F%E5%8D%B8%E8%BD%BD"><span class="toc-number">1.0.34.</span> <span class="toc-text">33.列出已经安装的包？安装软件？更新软件？卸载?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#34-%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85%E9%80%9A%E5%B8%B8%E7%9A%84%E8%B7%AF%E5%AD%90"><span class="toc-number">1.0.35.</span> <span class="toc-text">34.源码安装通常的路子?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#35-vim%E7%BC%96%E8%BE%91%E5%99%A8%E5%87%A0%E7%A7%8D%E6%93%8D%E4%BD%9C%E6%A8%A1%E5%BC%8F%EF%BC%9F%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.0.36.</span> <span class="toc-text">35.vim编辑器几种操作模式？基本操作?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#36-%E6%9F%A5%E7%9C%8B%E8%AE%BE%E5%A4%87%E8%BF%98%E6%9C%89%E5%A4%9A%E5%B0%91%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4"><span class="toc-number">1.0.37.</span> <span class="toc-text">36.查看设备还有多少磁盘空间?</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%88%A4%E6%96%AD%E6%9F%90%E4%B8%AA%E7%89%B9%E5%AE%9A%E7%9B%AE%E5%BD%95%E6%98%AF%E5%90%A6%E6%9C%89%E8%B6%85%E5%A4%A7%E6%96%87%E4%BB%B6%EF%BC%9F"><span class="toc-number">1.0.37.0.1.</span> <span class="toc-text">快速判断某个特定目录是否有超大文件？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#37-%E9%BB%98%E8%AE%A4%E8%BF%9B%E7%A8%8B%E4%BF%A1%E6%81%AF%E6%98%BE%E7%A4%BA"><span class="toc-number">1.0.38.</span> <span class="toc-text">37.默认进程信息显示?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#38-%E5%AE%9E%E6%97%B6%E7%9B%91%E6%B5%8B%E8%BF%9B%E7%A8%8B"><span class="toc-number">1.0.39.</span> <span class="toc-text">38.实时监测进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#39-%E5%A6%82%E4%BD%95%E4%B8%AD%E6%96%AD%E4%B8%80%E4%B8%AA%E8%BF%9B%E7%A8%8B"><span class="toc-number">1.0.40.</span> <span class="toc-text">39.如何中断一个进程?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#40-%E5%A6%82%E4%BD%95%E6%8A%8A%E4%B8%80%E4%B8%AA%E8%BF%9B%E7%A8%8B%E6%94%BE%E5%88%B0%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%EF%BC%9F"><span class="toc-number">1.0.41.</span> <span class="toc-text">40.如何把一个进程放到后台运行？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#41-%E5%A6%82%E4%BD%95%E5%81%9C%E6%AD%A2%E4%B8%80%E4%B8%AA%E8%BF%9B%E7%A8%8B"><span class="toc-number">1.0.42.</span> <span class="toc-text">41.如何停止一个进程?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#42-%E9%AA%8C%E8%AF%81%E7%BD%91%E7%BB%9C%E5%8F%AF%E9%93%BE%E6%8E%A5%E5%91%BD%E4%BB%A4%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E4%BB%80%E4%B9%88%E5%8E%9F%E7%90%86%EF%BC%9F"><span class="toc-number">1.0.43.</span> <span class="toc-text">42.验证网络可链接命令是什么？什么原理？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#43-%E6%9F%A5%E7%9C%8B%E6%9F%90%E7%AB%AF%E5%8F%A3%E6%98%AF%E5%90%A6%E8%A2%AB%E5%8D%A0%E7%94%A8"><span class="toc-number">1.0.44.</span> <span class="toc-text">43.查看某端口是否被占用?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#44-%E5%A6%82%E4%BD%95%E6%9F%A5%E6%89%BE%E5%8C%B9%E9%85%8D%E7%9A%84%E6%96%87%E4%BB%B6%EF%BC%9F%E5%9F%BA%E4%BA%8E%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7%EF%BC%9F"><span class="toc-number">1.0.45.</span> <span class="toc-text">44.如何查找匹配的文件？基于文件属性？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#45-%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E4%B8%BB%E6%9C%BA%E5%90%8D%EF%BC%9F%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%EF%BC%9F%E5%A6%82%E4%BD%95%E9%87%8D%E5%90%AF%E5%90%8E%E7%94%9F%E6%95%88%EF%BC%9F"><span class="toc-number">1.0.46.</span> <span class="toc-text">45.如何查看当前主机名？如何修改？如何重启后生效？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#46-%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E6%9D%A1%E8%A7%84%E5%88%99%EF%BC%8C%E6%8B%92%E7%BB%9D%E6%9F%90%E4%B8%AAip%E8%AE%BF%E9%97%AE%E6%9C%AC%E6%9C%BA8080%E7%AB%AF%E5%8F%A3"><span class="toc-number">1.0.47.</span> <span class="toc-text">46.如何写一条规则，拒绝某个ip访问本机8080端口?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#47-%E5%93%AA%E4%B8%AA%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E4%BA%86%E4%B8%BB%E6%9C%BA%E5%90%8D%E5%92%8Cip%E7%9A%84%E6%98%A0%E5%B0%84%E5%85%B3%E7%B3%BB"><span class="toc-number">1.0.48.</span> <span class="toc-text">47.哪个文件包含了主机名和ip的映射关系?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#48-%E5%A6%82%E4%BD%95%E7%94%A8sed%E5%8F%AA%E6%89%93%E5%8D%B0%E7%AC%AC5%E8%A1%8C-%E5%88%A0%E9%99%A4%E7%AC%AC%E4%B8%80%E8%A1%8C%EF%BC%9F%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.0.49.</span> <span class="toc-text">48.如何用sed只打印第5行?删除第一行？替换字符串?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#49-%E6%89%93%E5%8D%B0%E6%96%87%E4%BB%B6%E7%AC%AC%E4%B8%80%E8%A1%8C%E5%88%B0%E7%AC%AC%E4%B8%89%E8%A1%8C"><span class="toc-number">1.0.50.</span> <span class="toc-text">49.打印文件第一行到第三行?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#50-%E5%A6%82%E4%BD%95%E7%94%A8awk%E6%9F%A5%E7%9C%8B%E7%AC%AC2%E8%A1%8C%E5%80%92%E6%95%B0%E7%AC%AC3%E4%B8%AA%E5%AD%97%E6%AE%B5"><span class="toc-number">1.0.51.</span> <span class="toc-text">50.如何用awk查看第2行倒数第3个字段?</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/05/11/interview-day1/" title="interview_day1"><img src="https://images.pexels.com/photos/15860716/pexels-photo-15860716.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400&amp;lazy=load" onerror="this.onerror=null;this.src='/'" alt="interview_day1"/></a><div class="content"><a class="title" href="/2023/05/11/interview-day1/" title="interview_day1">interview_day1</a><time datetime="2023-05-11T03:19:12.000Z" title="发表于 2023-05-11 11:19:12">2023-05-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/19/Linux-1/" title="Linux"><img src="https://cdn.pixabay.com/photo/2023/04/09/05/22/flowers-7910753__340.png" onerror="this.onerror=null;this.src='/'" alt="Linux"/></a><div class="content"><a class="title" href="/2023/04/19/Linux-1/" title="Linux">Linux</a><time datetime="2023-04-19T04:36:56.000Z" title="发表于 2023-04-19 12:36:56">2023-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/19/linux1/" title="Linux1"><img src="https://cdn.pixabay.com/photo/2023/04/15/17/17/forest-floor-7928213__340.jpg" onerror="this.onerror=null;this.src='/'" alt="Linux1"/></a><div class="content"><a class="title" href="/2023/04/19/linux1/" title="Linux1">Linux1</a><time datetime="2023-04-19T04:36:56.000Z" title="发表于 2023-04-19 12:36:56">2023-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/17/vue_4/" title="vue_4"><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2017/9/2/3e7245fc81db8303e446234f1bbf7094~tplv-t2oaga2asx-zoom-in-crop-mark:4536:0:0:0.awebp" onerror="this.onerror=null;this.src='/'" alt="vue_4"/></a><div class="content"><a class="title" href="/2023/04/17/vue_4/" title="vue_4">vue_4</a><time datetime="2023-04-17T08:36:54.000Z" title="发表于 2023-04-17 16:36:54">2023-04-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/17/vue_3/" title="vue_3"><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2017/9/2/3e7245fc81db8303e446234f1bbf7094~tplv-t2oaga2asx-zoom-in-crop-mark:4536:0:0:0.awebp" onerror="this.onerror=null;this.src='/'" alt="vue_3"/></a><div class="content"><a class="title" href="/2023/04/17/vue_3/" title="vue_3">vue_3</a><time datetime="2023-04-17T08:26:54.000Z" title="发表于 2023-04-17 16:26:54">2023-04-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By miiiss</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'OGkefNBy0zdWpqhQTYaG3J8G-MdYXbMMI',
+      appKey: '6FIuNL3jC3PJBj7b3jMNGFQq',
+      avatar: 'mm',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="5183531430" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="false" muted></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="true" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script async data-pjax src="/"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_injector_config();
+  }
+  </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>

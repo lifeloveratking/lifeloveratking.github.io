@@ -1,0 +1,258 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Linux1 | 林</title><meta name="keywords" content="linux"><meta name="author" content="miiiss"><meta name="copyright" content="miiiss"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="linux安装第一章硬件和软件硬件：计算机系统中由电子，机械和光电元件等组成的各种物理装置的总称。 软件：是用户和计算机硬件之间的接口和桥梁，用户通过软件与计算机进行交流。而操作系统，就是软件的一类。 操作系统操作系统可分为：个人桌面操作系统（win11和macOS）和服务器操作系统(Linux)。 操作系统是计算机软件的一种，它主要负责： 作为用户和计算机硬件之间的桥梁，调度和管理计算机硬件进行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux1">
+<meta property="og:url" content="http://example.com/2023/04/19/linux1/index.html">
+<meta property="og:site_name" content="林">
+<meta property="og:description" content="linux安装第一章硬件和软件硬件：计算机系统中由电子，机械和光电元件等组成的各种物理装置的总称。 软件：是用户和计算机硬件之间的接口和桥梁，用户通过软件与计算机进行交流。而操作系统，就是软件的一类。 操作系统操作系统可分为：个人桌面操作系统（win11和macOS）和服务器操作系统(Linux)。 操作系统是计算机软件的一种，它主要负责： 作为用户和计算机硬件之间的桥梁，调度和管理计算机硬件进行">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.pixabay.com/photo/2023/04/15/17/17/forest-floor-7928213__340.jpg">
+<meta property="article:published_time" content="2023-04-19T04:36:56.000Z">
+<meta property="article:modified_time" content="2023-04-19T04:41:17.739Z">
+<meta property="article:author" content="miiiss">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.pixabay.com/photo/2023/04/15/17/17/forest-floor-7928213__340.jpg"><link rel="shortcut icon" href="/img/logo.png"><link rel="canonical" href="http://example.com/2023/04/19/linux1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Linux1',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-04-19 12:41:17'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><link rel="stylesheet" href="APlayer.min.css"><div id="aplayer"></div><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" async></script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="林" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/pexels-anh-dang-16372799.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fa fa-film"></i><span> music</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.pixabay.com/photo/2023/04/15/17/17/forest-floor-7928213__340.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">林</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fa fa-film"></i><span> music</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Linux1</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-04-19T04:36:56.000Z" title="发表于 2023-04-19 12:36:56">2023-04-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-04-19T04:41:17.739Z" title="更新于 2023-04-19 12:41:17">2023-04-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux/">Linux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Linux1"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="linux安装"><a href="#linux安装" class="headerlink" title="linux安装"></a>linux安装</h1><p>第一章<br>硬件和软件<br>硬件：计算机系统中由电子，机械和光电元件等组成的各种物理装置的总称。</p>
+<p>软件：是用户和计算机硬件之间的接口和桥梁，用户通过软件与计算机进行交流。而操作系统，就是软件的一类。</p>
+<p>操作系统<br>操作系统可分为：个人桌面操作系统（win11和macOS）和服务器操作系统(Linux)。</p>
+<p>操作系统是计算机软件的一种，它主要负责：</p>
+<p>作为用户和计算机硬件之间的桥梁，调度和管理计算机硬件进行工作。</p>
+<p>操作系统可以：</p>
+<p>•调度CPU进行工作</p>
+<p>•调度内存进行工作</p>
+<p>•调度硬盘进行数据存储</p>
+<p>•调度键盘进行文字输入</p>
+<p>•调度显示屏显示内容</p>
+<p>•调度网卡进行网络通讯</p>
+<p>•调度音响发出声音</p>
+<p>•调度打印机打印内容 …</p>
+<p>Q%S：常见的操作系统有哪些？</p>
+<p>PC端：Windows、Linux、MacOS</p>
+<p>移动端：Android、IOS、鸿蒙系统</p>
+<p>Linux的诞生<br>Linux创始人: 林纳斯 托瓦兹</p>
+<p>Linux 诞生于1991年，作者上大学期间</p>
+<p>因为创始人在上大学期间经常需要浏览新闻和处理邮件，发现现有的操作系统不好用, 于是他决心自己写一个保护模式下的操作系统，这就是Linux的原型， 当时他21岁，后来经过全世界网友的支持, 现在能够兼容多种硬件，成为最为流行的服务器操作系统之一。</p>
+<p>Linux内核<br>Linux系统的组成如下：</p>
+<p>•Linux系统内核</p>
+<p>•系统级应用程序 两部分组成。</p>
+<p>•内核提供系统最核心的功能，如：调度CPU、调度内存、调度文件系统、调度网络通讯、调度IO等。</p>
+<p>•系统级应用程序，可以理解为出厂自带程序，可供用户快速上手操作系统，如：文件管理器、任务管理器、图片查看、音乐播放等。</p>
+<p>•比如，播放音乐，无论用户使用自带音乐播放器或是自行安装的第三方播放器均是由播放器程序，调用内核提供的相关功能，由内核调度CPU解码、音响发声等</p>
+<p>Linux发行版<br>内核是免费、开源的，这也就代表了：</p>
+<p>•任何人都可以获得并修改内核，并且自行集成系统级程序</p>
+<p>提供了内核+系统级程序的完整封装，称之为Linux发行版</p>
+<p>任何人都可以封装Linux，目前市面上由非常多的Linux发行版，常用的、知名的如下：</p>
+<p>不论用什么发行版，都是Linux，学到的东西都是通用的。</p>
+<p>虚拟机</p>
+<p>借助虚拟化技术，我们可以在系统中：通过虚拟化的软件——模拟计算机硬件——并给虚拟硬件安装真实的操作系统。</p>
+<p>这样，就可以在电脑中，虚拟出一个完整的电脑，以供我们学习Linux系统。</p>
+<p>图形化、命令行<br>对于操作系统的使用，有2种使用形式：</p>
+<p>•图形化页面使用操作系统</p>
+<p>•以命令的形式使用操作系统</p>
+<p>不论是Windows还是Linux亦或是MacOS系统，都是支持这两种使用形式。</p>
+<p>•图形化：使用操作系统提供的图形化页面，以获得图形化反馈的形式去使用操作系统。</p>
+<p>•命令行：使用操作系统提供的各类命令，以获得字符反馈的形式去使用操作系统。</p>
+<p>•Linux操作系统的图形化页面不好用且不稳定</p>
+<p>•使用命令行的形式操作更加高效且稳定资源占用低</p>
+<p>企业和开发者都选择命令行，所以我们也学习命令行</p>
+<p>FinalShell<br>如何查看Linux的IP地址并远程连接：</p>
+<p>•在Linux操作系统中，桌面空白右键点击：open in terminal</p>
+<p>•输入 ifconfig ，即可看到IP地址</p>
+<p>•在FinalShell中配置好IP地址，账号密码后即可连接成功</p>
+<p>WSL（Windows Subsystem for Linux）<br>这部分作为扩展，暂不提及。</p>
+<p>虚拟机快照<br>在学习阶段我们无法避免的可能损坏Linux操作系统。</p>
+<p>如果损坏的话，重新安装一个Linux操作系统就会十分麻烦。</p>
+<p>VMware虚拟机（Workstation和Funsion）支持为虚拟机制作快照。</p>
+<p>通过快照将当前虚拟机的状态保存下来，在以后可以通过快照恢复虚拟机到保存的状态。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">miiiss</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/04/19/linux1/">http://example.com/2023/04/19/linux1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">林</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/linux/">linux</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.pixabay.com/photo/2023/04/15/17/17/forest-floor-7928213__340.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/04/19/Linux-1/"><img class="prev-cover" src="https://cdn.pixabay.com/photo/2023/04/09/05/22/flowers-7910753__340.png" onerror="onerror=null;src='/'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Linux</div></div></a></div><div class="next-post pull-right"><a href="/2023/04/17/vue_4/"><img class="next-cover" src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2017/9/2/3e7245fc81db8303e446234f1bbf7094~tplv-t2oaga2asx-zoom-in-crop-mark:4536:0:0:0.awebp" onerror="onerror=null;src='/'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">vue_4</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/04/19/Linux-1/" title="Linux"><img class="cover" src="https://cdn.pixabay.com/photo/2023/04/09/05/22/flowers-7910753__340.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-19</div><div class="title">Linux</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/pexels-anh-dang-16372799.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">miiiss</div><div class="author-info__description">时间过得真快是不是c</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/lifeloveratking"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=535668586" target="_blank" title=""><i class="fa fa-qq"></i></a><a class="social-icon" href="mailto:sviptzk@163.com" target="_blank" title=""><i class="fa fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title=""><i class="fa fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">加油</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#linux%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text">linux安装</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/05/11/interview-day1/" title="interview_day1"><img src="https://images.pexels.com/photos/15860716/pexels-photo-15860716.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400&amp;lazy=load" onerror="this.onerror=null;this.src='/'" alt="interview_day1"/></a><div class="content"><a class="title" href="/2023/05/11/interview-day1/" title="interview_day1">interview_day1</a><time datetime="2023-05-11T03:19:12.000Z" title="发表于 2023-05-11 11:19:12">2023-05-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/19/Linux-1/" title="Linux"><img src="https://cdn.pixabay.com/photo/2023/04/09/05/22/flowers-7910753__340.png" onerror="this.onerror=null;this.src='/'" alt="Linux"/></a><div class="content"><a class="title" href="/2023/04/19/Linux-1/" title="Linux">Linux</a><time datetime="2023-04-19T04:36:56.000Z" title="发表于 2023-04-19 12:36:56">2023-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/19/linux1/" title="Linux1"><img src="https://cdn.pixabay.com/photo/2023/04/15/17/17/forest-floor-7928213__340.jpg" onerror="this.onerror=null;this.src='/'" alt="Linux1"/></a><div class="content"><a class="title" href="/2023/04/19/linux1/" title="Linux1">Linux1</a><time datetime="2023-04-19T04:36:56.000Z" title="发表于 2023-04-19 12:36:56">2023-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/17/vue_4/" title="vue_4"><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2017/9/2/3e7245fc81db8303e446234f1bbf7094~tplv-t2oaga2asx-zoom-in-crop-mark:4536:0:0:0.awebp" onerror="this.onerror=null;this.src='/'" alt="vue_4"/></a><div class="content"><a class="title" href="/2023/04/17/vue_4/" title="vue_4">vue_4</a><time datetime="2023-04-17T08:36:54.000Z" title="发表于 2023-04-17 16:36:54">2023-04-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/17/vue_3/" title="vue_3"><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2017/9/2/3e7245fc81db8303e446234f1bbf7094~tplv-t2oaga2asx-zoom-in-crop-mark:4536:0:0:0.awebp" onerror="this.onerror=null;this.src='/'" alt="vue_3"/></a><div class="content"><a class="title" href="/2023/04/17/vue_3/" title="vue_3">vue_3</a><time datetime="2023-04-17T08:26:54.000Z" title="发表于 2023-04-17 16:26:54">2023-04-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By miiiss</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'OGkefNBy0zdWpqhQTYaG3J8G-MdYXbMMI',
+      appKey: '6FIuNL3jC3PJBj7b3jMNGFQq',
+      avatar: 'mm',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="5183531430" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="false" muted></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="true" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script async data-pjax src="/"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_injector_config();
+  }
+  </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
